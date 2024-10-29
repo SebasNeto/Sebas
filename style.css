@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    /* justify-content: center; */
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+section {
+    padding: 2rem;
+    text-align: center;
+}
+
+/* #projetos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+} */
+
+#projetos-container {
+    display: flex;
+    flex-direction: column; /* Organiza em uma coluna */
+    align-items: center; /* Centraliza os itens no meio */
+    gap: 2rem; /* Espaço entre os cartões */
+}
+
+/* .project-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    width: 250px;
+    text-align: center;
+    background-color: #111;
+    color: white;
+    border-radius: 8px;
+    overflow: hidden;
+} */
+
+.project-card {
+    width: 80%; /* Largura maior para o cartão */
+    max-width: 600px; /* Define um tamanho máximo */
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: center;
+    background-color: #111;
+    color: white;
+    border-radius: 8px;
+}
+
+/* .project-image {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #333;
+    margin-bottom: 1rem;
+} */
+
+.project-image {
+    width: 100%; /* Imagem ocupa a largura completa do cartão */
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+.project-card h3 {
+    font-size: 1.2em;
+    margin: 0.5rem 0;
+}
+
+.project-card p {
+    font-size: 0.9em;
+    color: #bbb;
+    text-align: justify;
+    
+}
+
+.project-card a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #1e90ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project-card a:hover {
+    text-decoration: underline;
+}
+
+/* Responsivo para telas menores */
+@media (max-width: 768px) {
+    #projetos-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card {
+        width: 90%;
+    }
+}
+
+.justify {
+    text-align: justify;
+}
+
+#sobre p {
+    text-align: justify;
+}
+
+.social-links-header {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links-header a img {
+    width: 24px;
+    height: 24px;
+    filter: invert(1); /* Deixa os ícones brancos para um fundo escuro */
+    transition: transform 0.3s;
+}
+
+.social-links-header a:hover img {
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}

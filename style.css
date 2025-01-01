@@ -1,3 +1,4 @@
+/* Resetando estilos básicos */
 * {
     margin: 0;
     padding: 0;
@@ -5,146 +6,181 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: rgb(0, 0, 0);
-    color: white;
+    font-family: 'Roboto', Arial, sans-serif;
+    background: linear-gradient(120deg, #1e1e2f, #121212);
+    color: #f0f0f0;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
 header {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    background-color: #333;
-    color: white;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1rem;
+    background: #333;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header h3 {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
 }
 
 nav ul {
-    list-style: none;
     display: flex;
-    /* justify-content: center; */
+    gap: 1.5rem;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: #1e90ff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+.social-links {
+    display: flex;
     gap: 1rem;
     margin-top: 1rem;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
+.social-links img {
+    width: 32px;
+    height: 32px;
+    filter: invert(1);
+    transition: transform 0.3s ease;
 }
 
-section {
-    padding: 2rem;
+.social-links img:hover {
+    transform: scale(1.2);
+}
+
+.section {
+    padding: 4rem 2rem;
     text-align: center;
 }
 
-/* #projetos-container {
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+    color: #1e90ff;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 3px;
+    background: #1e90ff;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5px;
+}
+
+.section p {
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    color: #ccc;
+    text-align: justify;
+}
+
+#projetos-container {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
-} */
-
-#projetos-container {
-    display: flex;
-    flex-direction: column; /* Organiza em uma coluna */
-    align-items: center; /* Centraliza os itens no meio */
-    gap: 2rem; /* Espaço entre os cartões */
 }
-
-/* .project-card {
-    border: 1px solid #ddd;
-    padding: 1rem;
-    width: 250px;
-    text-align: center;
-    background-color: #111;
-    color: white;
-    border-radius: 8px;
-    overflow: hidden;
-} */
 
 .project-card {
-    width: 80%; /* Largura maior para o cartão */
-    max-width: 600px; /* Define um tamanho máximo */
-    border: 1px solid #ddd;
-    padding: 1rem;
-    text-align: center;
-    background-color: #111;
-    color: white;
+    background: #222;
+    color: #fff;
     border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* .project-image {
-    width: 100%;
-    height: auto;
-    border-bottom: 1px solid #333;
-    margin-bottom: 1rem;
-} */
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
 
 .project-image {
-    width: 100%; /* Imagem ocupa a largura completa do cartão */
+    width: 100%;
     height: auto;
-    margin-bottom: 1rem;
-    border-radius: 8px;
+    display: block;
+    border-bottom: 3px solid #1e90ff;
 }
 
 .project-card h3 {
-    font-size: 1.2em;
-    margin: 0.5rem 0;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    color: #1e90ff;
 }
 
 .project-card p {
-    font-size: 0.9em;
-    color: #bbb;
-    text-align: justify;
-    
+    font-size: 0.9rem;
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+    color: #ddd;
 }
 
 .project-card a {
-    display: inline-block;
-    margin-top: 0.5rem;
-    color: #1e90ff;
+    display: block;
+    text-align: center;
+    padding: 0.5rem;
+    margin: 1rem;
+    background: #1e90ff;
+    color: #fff;
     text-decoration: none;
+    border-radius: 4px;
     font-weight: bold;
+    transition: background 0.3s ease;
 }
 
 .project-card a:hover {
-    text-decoration: underline;
+    background: #fff;
+    color: #1e90ff;
 }
 
-/* Responsivo para telas menores */
+#contato a {
+    color: #1e90ff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#contato a:hover {
+    color: #fff;
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
-    #projetos-container {
+    nav ul {
         flex-direction: column;
-        align-items: center;
+        gap: 1rem;
     }
 
     .project-card {
-        width: 90%;
+        width: 100%;
     }
-}
-
-.justify {
-    text-align: justify;
-}
-
-#sobre p {
-    text-align: justify;
-}
-
-.social-links-header {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.social-links-header a img {
-    width: 24px;
-    height: 24px;
-    filter: invert(1); /* Deixa os ícones brancos para um fundo escuro */
-    transition: transform 0.3s;
-}
-
-.social-links-header a:hover img {
-    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
 }

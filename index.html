@@ -3,25 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio - Sebastião Bicharra Neto</title>
+    <title>Portfólio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Cabeçalho -->
     <header>
-        <div class="header-container">
-            <h1>Sebastião Bicharra Neto</h1>
-            <h3>Cientista da Computação</h3>
-            <nav>
-                <ul>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#projetos">Projetos</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>Sebastião Bicharra Neto</h1>
+        <h3>Cientista da Computação</h3>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
         <div class="social-links">
-            <a href="https://www.linkedin.com/in/sebasti%C3%A3o-bicharra-ba53a81b7" target="_blank" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/sebastião-bicharra-ba53a81b7" target="_blank" aria-label="LinkedIn">
                 <img src="imagens/linkedin.png" alt="LinkedIn">
             </a>
             <a href="https://github.com/SebasNeto" target="_blank" aria-label="GitHub">
@@ -33,35 +31,27 @@
         </div>
     </header>
 
-    <!-- Sobre -->
-    <section id="sobre" class="section">
+    <section id="sobre" class="fade-in">
         <h2>Sobre Mim</h2>
         <p>
-            Sou graduando em Ciência da Computação pela Universidade Federal do Amazonas (UFAM). Minha experiência inclui projetos em algoritmos, processamento de imagens, programação paralela e tecnologias educacionais. Atualmente, foco na aplicação de programação paralela para otimização em sistemas distribuídos e banco de dados.
+            Sou graduando em Ciência da Computação pela UFAM...
         </p>
     </section>
 
-    <!-- Projetos -->
-    <section id="projetos" class="section">
+    <section id="projetos" class="fade-in">
         <h2>Meus Projetos</h2>
-        <div id="projetos-container"></div>
-    </section>
-
-    <!-- Contato -->
-    <section id="contato" class="section">
-        <h2>Contato</h2>
-        <p>Entre em contato comigo pelo e-mail: <a href="mailto:sebastiaobicharraneto@gmail.com">sebastiaobicharraneto@gmail.com</a></p>
-        <p>Conecte-se comigo nas redes sociais abaixo.</p>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/sebasti%C3%A3o-bicharra-ba53a81b7" target="_blank" aria-label="LinkedIn">
-                <img src="imagens/linkedin.png" alt="LinkedIn">
-            </a>
-            <a href="https://github.com/SebasNeto" target="_blank" aria-label="GitHub">
-                <img src="imagens/github.png" alt="GitHub">
-            </a>
+        <div id="projetos-container">
+            <!-- Exemplo de Projeto -->
+            <div class="project-card">
+                <img src="imagens/projeto1.png" alt="Projeto 1" class="project-image">
+                <h3>Projeto 1</h3>
+                <p>Descrição breve do projeto.</p>
+                <a href="#">Saiba mais</a>
+            </div>
         </div>
     </section>
 
     <script src="script.js"></script>
 </body>
 </html>
+

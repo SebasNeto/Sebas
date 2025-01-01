@@ -1,4 +1,4 @@
-/* Resetando estilos básicos */
+/* Estilos globais */
 * {
     margin: 0;
     padding: 0;
@@ -7,22 +7,17 @@
 
 body {
     font-family: 'Roboto', Arial, sans-serif;
-    background: linear-gradient(120deg, #1e1e2f, #121212);
+    background: linear-gradient(to right, #1e1e2f, #121212);
     color: #f0f0f0;
     line-height: 1.6;
-    overflow-x: hidden;
 }
 
+/* Cabeçalho */
 header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     text-align: center;
-    padding: 2rem 1rem;
-    background: #333;
-    color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    background-color: #333;
+    color: white;
 }
 
 header h1 {
@@ -33,13 +28,14 @@ header h1 {
 header h3 {
     font-size: 1.2rem;
     font-weight: 300;
-    margin-bottom: 1.5rem;
 }
 
 nav ul {
-    display: flex;
-    gap: 1.5rem;
     list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
 }
 
 nav a {
@@ -50,11 +46,13 @@ nav a {
 }
 
 nav a:hover {
-    color: #fff;
+    color: white;
 }
 
+/* Links sociais */
 .social-links {
     display: flex;
+    justify-content: center;
     gap: 1rem;
     margin-top: 1rem;
 }
@@ -62,7 +60,6 @@ nav a:hover {
 .social-links img {
     width: 32px;
     height: 32px;
-    filter: invert(1);
     transition: transform 0.3s ease;
 }
 
@@ -70,6 +67,7 @@ nav a:hover {
     transform: scale(1.2);
 }
 
+/* Seções */
 .section {
     padding: 4rem 2rem;
     text-align: center;
@@ -77,100 +75,85 @@ nav a:hover {
 
 .section h2 {
     font-size: 2rem;
-    margin-bottom: 2rem;
-    position: relative;
-    display: inline-block;
+    margin-bottom: 1.5rem;
     color: #1e90ff;
+    position: relative;
 }
 
 .section h2::after {
     content: '';
     position: absolute;
-    width: 60%;
+    width: 60px;
     height: 3px;
-    background: #1e90ff;
+    background-color: #1e90ff;
     left: 50%;
     transform: translateX(-50%);
-    bottom: -5px;
+    bottom: -10px;
 }
 
 .section p {
     max-width: 800px;
-    margin: 0 auto 2rem auto;
-    color: #ccc;
-    text-align: justify;
+    margin: 0 auto;
+    color: #ddd;
 }
 
+/* Projetos */
 #projetos-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
     justify-content: center;
+    gap: 2rem;
 }
 
 .project-card {
     background: #222;
     color: #fff;
     border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 90%;
-    max-width: 400px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 400px;
+    width: 100%;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
-.project-image {
+.project-card img {
     width: 100%;
-    height: auto;
-    display: block;
     border-bottom: 3px solid #1e90ff;
 }
 
 .project-card h3 {
     font-size: 1.5rem;
-    margin: 1rem 0;
+    margin: 1rem;
     color: #1e90ff;
 }
 
 .project-card p {
-    font-size: 0.9rem;
     padding: 0 1rem;
     margin-bottom: 1rem;
-    color: #ddd;
+    text-align: justify;
+    color: #bbb;
 }
 
 .project-card a {
     display: block;
-    text-align: center;
     padding: 0.5rem;
     margin: 1rem;
     background: #1e90ff;
-    color: #fff;
+    color: white;
     text-decoration: none;
     border-radius: 4px;
-    font-weight: bold;
     transition: background 0.3s ease;
+    text-align: center;
 }
 
 .project-card a:hover {
-    background: #fff;
+    background: white;
     color: #1e90ff;
-}
-
-#contato a {
-    color: #1e90ff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-#contato a:hover {
-    color: #fff;
 }
 
 /* Responsividade */
@@ -181,6 +164,6 @@ nav a:hover {
     }
 
     .project-card {
-        width: 100%;
+        width: 90%;
     }
 }

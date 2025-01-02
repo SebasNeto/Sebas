@@ -4,11 +4,6 @@
     box-sizing: border-box;
 }
 
-#sobre p {
-    text-align: justify;
-}
-
-
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #121212;
@@ -115,3 +110,6 @@ section {
     }
 }
 
+#sobre p {
+    text-align: justify;
+}

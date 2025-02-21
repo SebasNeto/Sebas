@@ -112,6 +112,3 @@ document.addEventListener("DOMContentLoaded", () => {
     renderizarCertificados(); 
 });
 
-
-//window.onload = renderizarProjetos;
-document.addEventListener("DOMContentLoaded", renderizarProjetos);

@@ -8,15 +8,22 @@ const projetos = [
     },
     {
         titulo: "Uma análise empírica sobre o desempenho de algoritmos de ordenação",
-        descricao: "O projeto realizou uma análise detalhada do desempenho de cinco algoritmos de ordenação: Bolha, Inserção Direta, Seleção Direta, Merge Sort e Quick Sort. O objetivo foi identificar e comparar o comportamento desses algoritmos na ordenação de grandes volumes de dados, destacando suas respectivas aplicações práticas e relevância em cenários reais.",
+        descricao: "O projeto teve como objetivo realizar uma análise detalhada do desempenho de cinco algoritmos de ordenação: Bolha, Inserção Direta, Seleção Direta, Merge Sort e Quick Sort. Foi analisado e comparado o comportamento desses algoritmos na ordenação de grandes volumes de dados, destacando suas respectivas aplicações práticas e relevância em cenários reais.",
         imagem: "imagens/cert-super.PNG" ,
         link: "https://github.com/SebasNeto/PROJETO-SUPER---UFAM.git"
     },
     {
         titulo: "Análise comparativa de desempenho entre algoritmos paralelos e tradicionais para processamento de imagens",
-        descricao: "Este projeto visa realizar uma análise comparativa do desempenho entre algoritmos tradicionais e paralelos no processamento de imagens. Utilizando técnicas como transformadas radiométricas, detecção de bordas e filtragem espacial, o estudo avaliará o impacto da programação paralela em termos de tempo de processamento e eficiência. A investigação foca em quantificar o ganho de desempenho proporcionado pela execução paralela e examinar se esse ganho justifica a complexidade adicional no desenvolvimento. A pesquisa busca contribuir para a escolha mais adequada de tecnologias paralelas para o processamento de imagens.",
+        descricao: "O projeto teve como objetivo realizar uma análise comparativa do desempenho entre algoritmos tradicionais e paralelos no processamento de imagens. Utilizando técnicas como transformadas radiométricas, detecção de bordas e filtragem espacial, o estudo avaliará o impacto da programação paralela em termos de tempo de processamento e eficiência. A investigação foca em quantificar o ganho de desempenho proporcionado pela execução paralela e examinar se esse ganho justifica a complexidade adicional no desenvolvimento. A pesquisa busca contribuir para a escolha mais adequada de tecnologias paralelas para o processamento de imagens.",
         imagem: "imagens/cert-super-2.PNG",
         link: "https://github.com/SebasNeto/Processamento-de-Imagens---Programacao-Paralela.git"
+    },
+    {
+        titulo: "Processamento de Imagens e Programação Paralela",
+        descricao: "O projeto teve como objetivo aplicar tecnicas de processamento de imagens como transformações radiométricas, filtragens espaciais e detecção de bordas em imagens diversificadas. Foi utilizado o poder o paralelismo para melhoria do desempenho.",
+        imagem: "imagens/PIBIC.jpg",
+        link: "https://github.com/SebasNeto/Processamento-de-Imagens---Programacao-Paralela.git"
+
     }
 ];
 

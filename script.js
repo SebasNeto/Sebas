@@ -27,22 +27,6 @@ const projetos = [
     }
 ];
 
-// Função para renderizar projetos na página
-function renderizarProjetos() {
-    const container = document.getElementById("projetos-container");
-    projetos.forEach(projeto => {
-        const projetoCard = document.createElement("div");
-        projetoCard.className = "project-card";
-        projetoCard.innerHTML = `
-            <img src="${projeto.imagem}" alt="${projeto.titulo}" class="project-image">
-            <h3>${projeto.titulo}</h3>
-            <p>${projeto.descricao}</p>
-            <a href="${projeto.link}" target="_blank">Ver mais</a>
-        `;
-        container.appendChild(projetoCard);
-    });
-}
-
 //certificações 
 
 const certificados = [
@@ -88,6 +72,24 @@ const certificados = [
     }
 ];
 
+
+// Função para renderizar projetos na página
+function renderizarProjetos() {
+    const container = document.getElementById("projetos-container");
+    projetos.forEach(projeto => {
+        const projetoCard = document.createElement("div");
+        projetoCard.className = "project-card";
+        projetoCard.innerHTML = `
+            <img src="${projeto.imagem}" alt="${projeto.titulo}" class="project-image">
+            <h3>${projeto.titulo}</h3>
+            <p>${projeto.descricao}</p>
+            <a href="${projeto.link}" target="_blank">Ver mais</a>
+        `;
+        container.appendChild(projetoCard);
+    });
+}
+
+
 // Função para renderizar certificados na página
 function renderizarCertificados() {
     const container = document.getElementById("certificados-container");
@@ -106,10 +108,10 @@ function renderizarCertificados() {
 
 // Chama a função ao carregar a página
 document.addEventListener("DOMContentLoaded", () => {
-    renderizarProjetos(); // Mantém os projetos sendo renderizados
-    renderizarCertificados(); // Adiciona a nova seção de certificados
+    renderizarProjetos(); 
+    renderizarCertificados(); 
 });
 
-// Chama a função ao carregar a página
+
 //window.onload = renderizarProjetos;
 document.addEventListener("DOMContentLoaded", renderizarProjetos);

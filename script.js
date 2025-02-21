@@ -93,6 +93,7 @@ function renderizarProjetos() {
 // Função para renderizar certificados na página
 function renderizarCertificados() {
     const container = document.getElementById("certificados-container");
+    container.innerHTML = "";
     certificados.forEach(certificado => {
         const certificadoCard = document.createElement("div");
         certificadoCard.className = "certificado-card";

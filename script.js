@@ -100,7 +100,7 @@ function renderizarCertificados() {
             <img src="${certificado.imagem}" alt="${certificado.titulo}" class="certificado-image">
             <h3>${certificado.titulo}</h3>
             <p>${certificado.descricao}</p>
-            <a href="${certificado.link}" target="_blank">Ver Certificado</a>
+            <a href="${certificado.link}" target="_blank"></a>
         `;
         container.appendChild(certificadoCard);
     });

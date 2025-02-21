@@ -130,3 +130,50 @@ section {
 .project-card p {
     text-align: justify;
 }
+
+
+/* Certificações */
+
+#certificados-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.certificado-card {
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+    box-sizing: border-box;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.certificado-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+}
+
+.certificado-card img {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+.certificado-card h3 {
+    color: #00bcd4;
+}
+
+.certificado-card a {
+    color: #ff4081;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.certificado-card a:hover {
+    text-decoration: underline;
+}

@@ -43,6 +43,73 @@ function renderizarProjetos() {
     });
 }
 
+//certificações 
+
+const certificados = [
+    {
+        titulo: "Projeto de Sistemas Web",
+        descricao: "Curso que aborda o desenvolvimento de sistemas web desde a concepção até a implementação. O conteúdo inclui levantamento e análise de requisitos, modelagem de sistemas, engenharia e validação de requisitos, além do uso de metodologias e ferramentas para modelagem de aplicações web. O curso também cobre a utilização da UML para documentação e projeto de sistemas web.",
+        imagem: "imagens/certificado_web.jpg",
+    },
+    {
+        titulo: "Curso de Machine Learning e Deep Learning",
+        descricao: "Curso introdutório sobre Machine Learning e Deep Learning, cobrindo conceitos básicos, principais algoritmos e aplicações práticas. O programa abordou desde aprendizado supervisionado até redes neurais profundas e suas implementações.",
+        imagem: "imagens/build.jpg",
+    },
+    {
+        titulo: "Processamento de Linguagem Natural e Visão Computacional",
+        descricao: "Curso focado em técnicas de Processamento de Linguagem Natural (PLN) e Visão Computacional, explorando o uso de redes neurais e modelos avançados para análise de texto e imagens. Incluiu aplicações práticas na área de inteligência artificial.",
+        imagem: "imagens/build_02.jpg",
+    },
+    {
+        titulo: "PCAP: Programming Essentials in Python",
+        descricao: "Curso essencial de programação em Python, cobrindo desde conceitos básicos até tópicos avançados como manipulação de arquivos, programação orientada a objetos (OOP) e uso de módulos e pacotes. Inclui boas práticas e técnicas fundamentais para desenvolvimento eficiente.",
+        imagem: "imagens/python_curso",
+    },
+    {
+        titulo: "Curso de HTML5 e Programação Web",
+        descricao: "Curso introdutório sobre HTML5 e desenvolvimento web, abrangendo estruturação de páginas, listas, tabelas, formulários e elementos semânticos. Incluiu exercícios práticos para criação de sites responsivos e interativos.",
+        imagem: "imagens/html_curso",
+    },
+    {
+        titulo: "Capacitação Tecnológica: Competências Profissionais, Emocionais e Tecnológicas",
+        descricao: "Curso abordando competências essenciais para o mercado de trabalho, incluindo estratégia, produtividade, liderança, inteligência emocional e transformação digital. Ministrado pelos professores Leandro Karnal e Luiza Helena Trajano, o programa focou em inovação, cooperação e adaptabilidade profissional.",
+        imagem: "imagens/capacitacao",
+    },
+    {
+        titulo: "Super Tech Week 2022",
+        descricao: "Participação na segunda edição da Super Tech Week, um evento científico que reúne palestras, workshops e painéis sobre tendências tecnológicas e inovação. O evento abordou temas como inteligência artificial, programação e desenvolvimento de software.",
+        imagem: "imagens/tech_02",
+    },
+    {
+        titulo: "Super Tech Week 2023",
+        descricao: "Participação na terceira edição da Super Tech Week, explorando avanços tecnológicos e tendências em TI. O evento contou com especialistas da área discutindo inteligência artificial, computação em nuvem, programação paralela e segurança da informação.",
+        imagem: "imagens/tech_03",
+    }
+];
+
+// Função para renderizar certificados na página
+function renderizarCertificados() {
+    const container = document.getElementById("certificados-container");
+    certificados.forEach(certificado => {
+        const certificadoCard = document.createElement("div");
+        certificadoCard.className = "certificado-card";
+        certificadoCard.innerHTML = `
+            <img src="${certificado.imagem}" alt="${certificado.titulo}" class="certificado-image">
+            <h3>${certificado.titulo}</h3>
+            <p>${certificado.descricao}</p>
+            <a href="${certificado.link}" target="_blank">Ver Certificado</a>
+        `;
+        container.appendChild(certificadoCard);
+    });
+}
+
+// Chama a função ao carregar a página
+document.addEventListener("DOMContentLoaded", () => {
+    renderizarProjetos(); // Mantém os projetos sendo renderizados
+    renderizarCertificados(); // Adiciona a nova seção de certificados
+});
+
 // Chama a função ao carregar a página
 //window.onload = renderizarProjetos;
 document.addEventListener("DOMContentLoaded", renderizarProjetos);

@@ -44,4 +44,5 @@ function renderizarProjetos() {
 }
 
 // Chama a função ao carregar a página
-window.onload = renderizarProjetos;
+//window.onload = renderizarProjetos;
+document.addEventListener("DOMContentLoaded", renderizarProjetos);

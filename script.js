@@ -64,27 +64,27 @@ const certificados = [
     {
         titulo: "PCAP: Programming Essentials in Python",
         descricao: "Curso essencial de programação em Python, cobrindo desde conceitos básicos até tópicos avançados como manipulação de arquivos, programação orientada a objetos (OOP) e uso de módulos e pacotes. Inclui boas práticas e técnicas fundamentais para desenvolvimento eficiente.",
-        imagem: "imagens/python_curso",
+        imagem: "imagens/python_curso.jpg",
     },
     {
         titulo: "Curso de HTML5 e Programação Web",
         descricao: "Curso introdutório sobre HTML5 e desenvolvimento web, abrangendo estruturação de páginas, listas, tabelas, formulários e elementos semânticos. Incluiu exercícios práticos para criação de sites responsivos e interativos.",
-        imagem: "imagens/html_curso",
+        imagem: "imagens/html_curso.jpg",
     },
     {
         titulo: "Capacitação Tecnológica: Competências Profissionais, Emocionais e Tecnológicas",
         descricao: "Curso abordando competências essenciais para o mercado de trabalho, incluindo estratégia, produtividade, liderança, inteligência emocional e transformação digital. Ministrado pelos professores Leandro Karnal e Luiza Helena Trajano, o programa focou em inovação, cooperação e adaptabilidade profissional.",
-        imagem: "imagens/capacitacao",
+        imagem: "imagens/capacitacao.jpg",
     },
     {
         titulo: "Super Tech Week 2022",
         descricao: "Participação na segunda edição da Super Tech Week, um evento científico que reúne palestras, workshops e painéis sobre tendências tecnológicas e inovação. O evento abordou temas como inteligência artificial, programação e desenvolvimento de software.",
-        imagem: "imagens/tech_02",
+        imagem: "imagens/tech_02.jpg",
     },
     {
         titulo: "Super Tech Week 2023",
         descricao: "Participação na terceira edição da Super Tech Week, explorando avanços tecnológicos e tendências em TI. O evento contou com especialistas da área discutindo inteligência artificial, computação em nuvem, programação paralela e segurança da informação.",
-        imagem: "imagens/tech_03",
+        imagem: "imagens/tech_03.jpg",
     }
 ];
 

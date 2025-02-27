@@ -72,6 +72,17 @@ const certificados = [
     }
 ];
 
+//Eventos
+const eventos = [
+    {
+        titulo: "Apresentação Super Tech Week 2022",
+        imagens: ["imagens/apre_super.jpg"]
+    },
+    {
+        titulo: "Apresentação PIBIC 2023-2024",
+        imagens: ["imagens/apre_pibic.jpg","imagens/apre_pibic02.jpg","imagens/apre_pibic03.jpg"]
+    }
+];
 
 // Função para renderizar projetos na página
 function renderizarProjetos() {
@@ -107,9 +118,32 @@ function renderizarCertificados() {
     });
 }
 
+// Função para renderizar as fotos de eventos
+function renderizarEventos() {
+    const container = document.getElementById("eventos-container");
+    container.innerHTML = ""; // Garante que não há duplicação
+
+    eventos.forEach(evento => {
+        const eventoCard = document.createElement("div");
+        eventoCard.className = "evento-card";
+
+        // Criar o título do evento
+        let imagensHtml = `<h3>${evento.titulo}</h3>`;
+
+        // Criar as imagens do evento
+        evento.imagens.forEach(imagem => {
+            imagensHtml += `<img src="${imagem}" alt="${evento.titulo}" class="evento-imagem">`;
+        });
+
+        eventoCard.innerHTML = imagensHtml;
+        container.appendChild(eventoCard);
+    });
+}
+
 // Chama a função ao carregar a página
 document.addEventListener("DOMContentLoaded", () => {
     renderizarProjetos(); 
     renderizarCertificados(); 
+    renderizarEventos();
 });
 

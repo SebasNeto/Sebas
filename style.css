@@ -179,3 +179,40 @@ section {
 .certificado-card a:hover {
     text-decoration: underline;
 }
+
+/* Eventos */
+
+#eventos-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os eventos quebrem para a próxima linha se a tela for pequena */
+    justify-content: center; /* Centraliza os eventos */
+    gap: 20px; /* Espaçamento entre os eventos */
+}
+
+
+
+.evento-card {
+    flex: 1 1 calc(50% - 20px); /* 2 eventos por linha */
+    max-width: calc(50% - 20px); /* Garante que cada evento ocupe metade da tela */
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.evento-card img {
+    width: 100%;
+    height: auto; /* Mantém a proporção original */
+    max-height: 300px; /* Ajuste conforme necessário */
+    object-fit: contain; /* Garante que a imagem inteira será exibida */
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+
+.evento-card h3 {
+    color: #00bcd4;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}

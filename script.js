@@ -71,12 +71,12 @@ const certificados = [
         imagem: "imagens/tech_03.jpg",
     },
     {
-        titulo: "Congresso de Iniciação Ciêntifca",
+        titulo: "Congresso de Iniciação Ciêntifica",
         descricao: "Participação no XXXIII Congresso de Iniciação Ciêntifica com a submissão e apresentação do Projeto intitulado como: Análise comparativa de desempenho entre algoritmos paralelos e tradicionais para processamento de imagens.",
         imagem: "imagens/connic.png"
     },
     {
-        titulo: "Congresso de Iniciação Ciêntifca",
+        titulo: "Congresso de Iniciação Ciêntifica",
         descricao: "Participação no XXXIII Congresso de Iniciação Ciêntifica.",
         imagem: "imagens/connic_02.png"
     }

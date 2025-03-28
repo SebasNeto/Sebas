@@ -69,6 +69,16 @@ const certificados = [
         titulo: "Super Tech Week 2023",
         descricao: "Participação na terceira edição da Super Tech Week, explorando avanços tecnológicos e tendências em TI. O evento contou com especialistas da área discutindo inteligência artificial, computação em nuvem, programação paralela e segurança da informação.",
         imagem: "imagens/tech_03.jpg",
+    },
+    {
+        titulo: "Congresso de Iniciação Ciêntifca",
+        descricao: "Participação no XXXIII Congresso de Iniciação Ciêntifica com a submissão e apresentação do Projeto intitulado como: Análise comparativa de desempenho entre algoritmos paralelos e tradicionais para processamento de imagens.",
+        imagem: "imagens/connic.png"
+    },
+    {
+        titulo: "Congresso de Iniciação Ciêntifca",
+        descricao: "Participação no XXXIII Congresso de Iniciação Ciêntifica.",
+        imagem: "imagens/connic_02.png"
     }
 ];
 

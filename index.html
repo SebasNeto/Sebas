@@ -1,81 +1,237 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio | Sebastião Bicharra Neto</title>
-    <meta name="description" content="Portfólio de Sebastião Bicharra Neto, cientista da computação com foco em programação paralela e processamento de imagens.">
-    <meta name="author" content="Sebastião Bicharra Neto">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Portfólio | Sebastião Bicharra Neto</title>
+  <meta name="description" content="Portfólio de Sebastião Bicharra Neto, cientista da computação com foco em programação paralela e processamento de imagens." />
+  <meta name="author" content="Sebastião Bicharra Neto" />
+  <meta name="theme-color" content="#0ea5a0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- GA (sobrescrito por script.js se você setar GA_ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <h1>Sebastião Bicharra Neto</h1>
-        <h3>Cientista da Computação</h3>
-        <nav>
-            <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#certificados">Certificações</a></li>
-                <li><a href="#eventos">Eventos</a></li>
-                <li><a href="#skills">Habilidades</a></li>
-            </ul>
-        </nav>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/sebastião-bicharra-ba53a81b7" target="_blank" aria-label="LinkedIn">
-                <img src="imagens/linkedin.png" alt="LinkedIn de Sebastião">
-            </a>
-            <a href="https://github.com/SebasNeto" target="_blank" aria-label="GitHub">
-                <img src="imagens/github.png" alt="GitHub de Sebastião">
-            </a>
-            <a href="mailto:sebastiaobicharraneto@gmail.com" aria-label="Email">
-                <img src="imagens/email.png" alt="Ícone de email">
-            </a>
-        </div>
-    </header>
+  <!-- Skip link -->
+  <a class="skip-link" href="#conteudo" data-i18n="a11y.skip">Ir para o conteúdo</a>
 
-    <section id="sobre" class="fade-in">
-        <h2>Sobre</h2>
-        <p>
-            Graduando em Ciência da Computação pela UFAM (Universidade Federal do Amazonas), com experiência em pesquisa acadêmica e desenvolvimento tecnológico.
-            Participei do Projeto SUPER, financiado pela Samsung, onde trabalhei com algoritmos de ordenação e processamento de imagens.
-            Atualmente, sou bolsista PIBIC, focando em programação paralela aplicada a imagens, bancos de dados e sistemas distribuídos.
-            Além disso, tenho experiência com tecnologias educacionais para aprimorar o aprendizado de estudantes.
-        </p>
-    </section>
+  <!-- HEADER -->
+  <header class="site-header" id="topo">
+    <div class="container nav-wrap">
+      <a class="brand" href="#topo" aria-label="Início">
+        <span class="brand-mark" aria-hidden="true">SN</span>
+        <span class="brand-text">Sebastião Bicharra Neto</span>
+      </a>
 
-    <section id="projetos" class="fade-in">
-        <h2>Meus Projetos</h2>
-        <div id="projetos-container"></div>
-    </section>
+      <!-- Botão hambúrguer (só mobile) -->
+      <button id="menuToggle" class="menu-toggle" aria-controls="siteNav" aria-expanded="false" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
 
-    <section id="certificados" class="fade-in">
-        <h2>Certificações/Cursos</h2>
-        <div id="certificados-container"></div>
-    </section>
-
-    <section id="eventos" class="fade-in">
-        <h2>Eventos</h2>
-        <div id="eventos-container"></div>
-    </section>
-
-    <section id="skills" class="fade-in">
-        <h2>Habilidades</h2>
-        <ul class="skills-list">
-            <li>Python</li>
-            <li>C / C++</li>
-            <li>Halide</li>
-            <li>OpenMP</li>
-            <li>HTML, CSS, JavaScript</li>
-            <li>MySQL / MongoDB</li>
+      <nav id="siteNav" class="site-nav" aria-label="Navegação principal">
+        <ul>
+          <li><a href="#sobre" data-nav data-i18n="nav.about">Sobre</a></li>
+          <li><a href="#conquistas" data-nav data-i18n="nav.achievements">Conquistas</a></li>
+          <li><a href="#projetos" data-nav data-i18n="nav.projects">Projetos</a></li>
+          <li><a href="#certificados" data-nav data-i18n="nav.certs">Certificações</a></li>
+          <li><a href="#eventos" data-nav data-i18n="nav.events">Eventos</a></li>
+          <li><a href="#skills" data-nav data-i18n="nav.skills">Habilidades</a></li>
+          <li><a href="#contato" data-nav data-i18n="nav.contact">Contato</a></li>
         </ul>
+      </nav>
+
+      <div class="actions">
+        <!-- Switch idioma -->
+        <button id="langToggle" class="chip lang-chip" aria-label="Trocar idioma">EN</button>
+
+        <!-- Switch tema -->
+        <button id="themeToggle" class="icon-btn" aria-label="Alternar tema">
+          <svg class="icon theme-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21.64 13a1 1 0 0 0-1.05-.14A8 8 0 1 1 11.1 3.41a1 1 0 0 0-.14-1.05 1 1 0 0 0-1.66.11A10 10 0 1 0 21.53 14a1 1 0 0 0 .11-1.66Z"/>
+          </svg>
+        </button>
+        <!-- Socials -->
+        <a class="icon-btn" href="https://www.linkedin.com/in/sebastião-bicharra-ba53a81b7" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5 2.5 2.5 0 0 1 4.98 3.5ZM.5 8h4v16h-4zM8 8h3.8v2.2h.05c.53-1 1.84-2.2 3.8-2.2 4.06 0 4.8 2.67 4.8 6.15V24h-4v-7.1c0-1.7 0-3.9-2.4-3.9s-2.8 1.87-2.8 3.78V24H8V8z"/></svg>
+        </a>
+        <a class="icon-btn" href="https://github.com/SebasNeto" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5A12 12 0 0 0 0 12.7c0 5.38 3.44 9.94 8.2 11.55.6.12.82-.27.82-.6v-2.1c-3.34.74-4.04-1.62-4.04-1.62-.55-1.45-1.34-1.83-1.34-1.83-1.1-.77.08-.76.08-.76 1.22.09 1.86 1.28 1.86 1.28 1.08 1.9 2.82 1.35 3.5 1.03.11-.81.42-1.35.76-1.66-2.67-.31-5.47-1.38-5.47-6.16 0-1.36.46-2.47 1.23-3.34-.12-.3-.53-1.56.12-3.25 0 0 1-.33 3.3 1.27a11.1 11.1 0 0 1 6 0c2.3-1.6 3.3-1.27 3.3-1.27.65 1.69.24 2.95.12 3.25.77.87 1.23 1.98 1.23 3.34 0 4.8-2.8 5.84-5.48 6.15.43.37.82 1.1.82 2.22v3.3c0 .33.22.73.83.6A12 12 0 0 0 24 12.7 12 12 0 0 0 12 .5"/></svg>
+        </a>
+      </div>
+    </div>
+    <div id="menuBackdrop" class="menu-backdrop" hidden></div>
+  </header>
+
+  <main id="conteudo">
+    <!-- HERO -->
+    <section class="hero section" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1 id="hero-title" data-i18n="hero.title">Programação Paralela &amp; Processamento de Imagens</h1>
+          <p data-i18n="hero.subtitle">Desenvolvo soluções de alto desempenho aplicadas a visão computacional, bancos de dados, sistemas distribuídos e desenvolvimento web.</p>
+          <div class="cta">
+            <a class="btn btn-primary" href="https://github.com/SebasNeto" target="_blank" rel="noopener" data-i18n="hero.github">Ver GitHub ↗</a>
+            <a id="cvBtn" class="btn btn-ghost" href="#" target="_blank" rel="noopener" data-i18n="hero.cv">Baixar CV</a>
+          </div>
+        </div>
+        <div class="hero-media" aria-hidden="true">
+          <img src="imagens/hero.png" alt="" loading="lazy" decoding="async" />
+        </div>
+      </div>
     </section>
 
-    <button id="scrollTopBtn" title="Voltar ao topo">↑</button>
+    <!-- SOBRE -->
+    <section id="sobre" class="section observe" aria-labelledby="sobre-title">
+      <div class="container">
+        <h2 id="sobre-title" class="section-title" data-i18n="about.title">Sobre</h2>
+        <p class="lead" data-i18n="about.text">
+          Graduado em Ciência da Computação pelo Instituto de Computação ICOMP da Universidade Federal do Amazonas - UFAM. Atuo com paralelismo aplicado a imagens, bancos de dados e sistemas distribuídos.
+        </p>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
+    <!-- CONQUISTAS -->
+    <section id="conquistas" class="section observe" aria-labelledby="conqs-title">
+      <div class="container">
+        <h2 id="conqs-title" class="section-title" data-i18n="achievements.title">Destaque de conquistas</h2>
+        <div class="metrics-grid">
+          <article class="metric" data-count="7">
+            <div class="metric-icon"><svg viewBox="0 0 24 24" class="icon"><path d="M3 13h12l-4 4m4-4-4-4M21 7v10"/></svg></div>
+            <p class="metric-value"><span class="count">0</span>×</p>
+            <p class="metric-label" data-i18n="achievements.speedup">Speedup em paralelismo (ex.)</p>
+          </article>
+          <article class="metric" data-count="10">
+            <div class="metric-icon"><svg viewBox="0 0 24 24" class="icon"><path d="M4 4h16v14H4zM4 20h16"/></svg></div>
+            <p class="metric-value"><span class="count">0</span>+</p>
+            <p class="metric-label" data-i18n="achievements.projects">Projetos/estudos entregues</p>
+          </article>
+          <article class="metric" data-count="3">
+            <div class="metric-icon"><svg viewBox="0 0 24 24" class="icon"><path d="M4 6h16M4 12h10M4 18h6"/></svg></div>
+            <p class="metric-value"><span class="count">0</span></p>
+            <p class="metric-label" data-i18n="achievements.talks">Apresentações & eventos</p>
+          </article>
+          <article class="metric" data-count="2">
+            <div class="metric-icon"><svg viewBox="0 0 24 24" class="icon"><path d="M12 2v20M5 9l7-7 7 7"/></svg></div>
+            <p class="metric-value"><span class="count">0</span>+</p>
+            <p class="metric-label" data-i18n="achievements.areas">Áreas de foco (VC, DB)</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="projetos" class="section observe" aria-labelledby="projetos-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="projetos-title" class="section-title" data-i18n="projects.title">Meus Projetos</h2>
+          <div class="filters">
+            <input id="buscaProjetos" class="input" type="search" data-i18n="projects.search" data-i18n-attr="placeholder" placeholder="Buscar por título ou descrição..." aria-label="Buscar projetos" />
+            <div class="chips" role="group" aria-label="Filtro">
+              <button class="chip is-active" data-cat="all" data-i18n="filters.all">Todos</button>
+              <button class="chip" data-cat="Paralelismo" data-i18n="filters.parallelism">Paralelismo</button>
+              <button class="chip" data-cat="Banco de Dados" data-i18n="filters.databases">Banco de Dados</button>
+              <button class="chip" data-cat="Visão Computacional" data-i18n="filters.cv">Visão Computacional</button>
+              <button class="chip" data-cat="Outros" data-i18n="filters.other">Outros</button>
+            </div>
+          </div>
+        </div>
+        <div id="projetos-container" class="cards-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- CERTIFICADOS -->
+    <section id="certificados" class="section observe" aria-labelledby="certificados-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="certificados-title" class="section-title" data-i18n="certs.title">Certificações / Cursos</h2>
+          <div class="carousel-actions">
+            <button class="icon-btn" id="certPrev" aria-label="Anterior">‹</button>
+            <button class="icon-btn" id="certNext" aria-label="Próximo">›</button>
+          </div>
+        </div>
+        <div id="certificados-container" class="cards-row snap-x" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- EVENTOS -->
+    <section id="eventos" class="section observe" aria-labelledby="eventos-title">
+      <div class="container">
+        <h2 id="eventos-title" class="section-title" data-i18n="events.title">Eventos</h2>
+        <div id="eventos-container" class="cards-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section observe" aria-labelledby="skills-title">
+      <div class="container">
+        <h2 id="skills-title" class="section-title" data-i18n="skills.title">Habilidades</h2>
+        <ul class="skills-grid">
+          <li class="skill skill--python"><svg class="skill-icon" viewBox="0 0 24 24"><path d="M4 8c0-2 2-4 4-4h4v4H8v4h4v4H8c-2 0-4-2-4-4zM12 4h4c2 0 4 2 4 4s-2 4-4 4h-4"/></svg><span>Python</span></li>
+          <li class="skill skill--cpp"><svg class="skill-icon" viewBox="0 0 24 24"><path d="M4 5h4l4 6 4-6h4l-6 9 6 9h-4l-4-6-4 6H4l6-9z"/></svg><span>C / C++</span></li>
+          <li class="skill skill--halide"><svg class="skill-icon" viewBox="0 0 24 24"><path d="M3 12h6l3-5 3 5h6M6 14h12M8 18h8"/></svg><span>Halide</span></li>
+          <li class="skill skill--openmp"><svg class="skill-icon" viewBox="0 0 24 24"><path d="M4 4h16v4H4zM4 10h16v4H4zM4 16h16v4H4z"/></svg><span>OpenMP</span></li>
+          <li class="skill skill--web"><svg class="skill-icon" viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h6"/></svg><span>HTML, CSS, JS</span></li>
+          <li class="skill skill--db"><svg class="skill-icon" viewBox="0 0 24 24"><path d="M3 8c0-1.1.9-2 2-2h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zM7 10h10"/></svg><span>MySQL / MongoDB</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="section observe" aria-labelledby="contato-title">
+      <div class="container">
+        <h2 id="contato-title" class="section-title" data-i18n="contact.title">Vamos conversar</h2>
+        <form id="contatoForm" class="contact-form" novalidate>
+          <div class="form-row">
+            <label for="nome" data-i18n="contact.name">Nome</label>
+            <input id="nome" name="nome" type="text" required placeholder="Seu nome" data-i18n="contact.namePh" data-i18n-attr="placeholder" />
+          </div>
+          <div class="form-row">
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" required placeholder="seu@email.com" data-i18n="contact.emailPh" data-i18n-attr="placeholder" />
+          </div>
+          <div class="form-row">
+            <label for="assunto" data-i18n="contact.subject">Assunto</label>
+            <input id="assunto" name="assunto" type="text" placeholder="Tema da mensagem" data-i18n="contact.subjectPh" data-i18n-attr="placeholder" />
+          </div>
+          <div class="form-row">
+            <label for="mensagem" data-i18n="contact.message">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" required rows="5" placeholder="Como posso ajudar?" data-i18n="contact.messagePh" data-i18n-attr="placeholder"></textarea>
+          </div>
+          <input type="text" name="_honey" style="display:none">
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit" data-i18n="contact.send">Enviar mensagem</button>
+            <a class="btn btn-ghost" href="mailto:sebastiaobicharraneto@gmail.com" data-i18n="contact.emailAlt">Enviar por e-mail</a>
+          </div>
+          <p id="contatoFeedback" class="form-feedback" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FAB -->
+  <button id="scrollTopBtn" class="fab" title="Voltar ao topo" aria-label="Voltar ao topo">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8l-6 6h12z"/></svg>
+  </button>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Fechar">×</button>
+    <img id="lightboxImg" alt="" />
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
+
+
 
 

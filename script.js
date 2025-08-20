@@ -3,7 +3,7 @@
    =========================== */
 const GA_ID = "G-XXXXXXXXXX";          // ex.: G-ABC123DEF
 const CV_URL = "https://seu-usuario.github.io/cv.pdf"; // link do seu CV
-const FORM_EMAIL = "sebastiaobicharraneto@gmail.com"; // FormSubmit AJAX
+const FORM_EMAIL = "sebastiaobicharraneto@gmail.com";  // FormSubmit AJAX
 
 // GA se ID válido
 if (GA_ID && GA_ID !== "G-XXXXXXXXXX") {
@@ -16,7 +16,7 @@ if (GA_ID && GA_ID !== "G-XXXXXXXXXX") {
    I18N
    =========================== */
 const I18N = {
-  pt: { a11y:{skip:"Ir para o conteúdo"},
+  pt:{a11y:{skip:"Ir para o conteúdo"},
     nav:{about:"Sobre",achievements:"Conquistas",projects:"Projetos",certs:"Certificações",events:"Eventos",skills:"Habilidades",contact:"Contato"},
     hero:{title:"Programação Paralela & Processamento de Imagens",subtitle:"Desenvolvo soluções de alto desempenho aplicadas a visão computacional, bancos de dados e sistemas distribuídos.",github:"Ver GitHub ↗",cv:"Baixar CV"},
     about:{title:"Sobre",text:"Graduando em Ciência da Computação pela UFAM. Atuo com paralelismo aplicado a imagens, bancos de dados e sistemas distribuídos."},
@@ -25,9 +25,10 @@ const I18N = {
     filters:{all:"Todos",parallelism:"Paralelismo",databases:"Banco de Dados",cv:"Visão Computacional",other:"Outros"},
     certs:{title:"Certificações / Cursos"},
     events:{title:"Eventos"}, skills:{title:"Habilidades"},
-    contact:{title:"Vamos conversar",name:"Nome",namePh:"Seu nome",subject:"Assunto",subjectPh:"Tema da mensagem",message:"Mensagem",messagePh:"Como posso ajudar?",emailPh:"seu@email.com",send:"Enviar mensagem",emailAlt:"Enviar por e-mail",sending:"Enviando...",sent:"Mensagem enviada! Vou responder em breve.",error:"Não foi possível enviar. Tente novamente ou use o e-mail.",network:"Falha de rede. Tente novamente."}
+    contact:{title:"Vamos conversar",name:"Nome",namePh:"Seu nome",subject:"Assunto",subjectPh:"Tema da mensagem",message:"Mensagem",messagePh:"Como posso ajudar?",emailPh:"seu@email.com",send:"Enviar mensagem",emailAlt:"Enviar por e-mail",sending:"Enviando...",sent:"Mensagem enviada! Vou responder em breve.",error:"Não foi possível enviar. Tente novamente ou use o e-mail.",network:"Falha de rede. Tente novamente.",
+      errName:"Nome é obrigatório", errEmail:"E-mail válido é obrigatório", errMsg:"Mensagem é obrigatória"}
   },
-  en: { a11y:{skip:"Skip to content"},
+  en:{a11y:{skip:"Skip to content"},
     nav:{about:"About",achievements:"Highlights",projects:"Projects",certs:"Certificates",events:"Events",skills:"Skills",contact:"Contact"},
     hero:{title:"Parallel Programming & Image Processing",subtitle:"I build high-performance solutions for computer vision, databases and distributed systems.",github:"View GitHub ↗",cv:"Download CV"},
     about:{title:"About",text:"Computer Science undergrad at UFAM. I work with parallelism applied to images, databases and distributed systems."},
@@ -36,7 +37,8 @@ const I18N = {
     filters:{all:"All",parallelism:"Parallelism",databases:"Databases",cv:"Computer Vision",other:"Other"},
     certs:{title:"Certificates / Courses"},
     events:{title:"Events"}, skills:{title:"Skills"},
-    contact:{title:"Let’s talk",name:"Name",namePh:"Your name",subject:"Subject",subjectPh:"Message topic",message:"Message",messagePh:"How can I help?",emailPh:"your@email.com",send:"Send message",emailAlt:"Send via email",sending:"Sending...",sent:"Message sent! I’ll get back soon.",error:"Couldn’t send now. Try again or use e-mail.",network:"Network error. Please try again."}
+    contact:{title:"Let’s talk",name:"Name",namePh:"Your name",subject:"Subject",subjectPh:"Message topic",message:"Message",messagePh:"How can I help?",emailPh:"your@email.com",send:"Send message",emailAlt:"Send via email",sending:"Sending...",sent:"Message sent! I’ll get back soon.",error:"Couldn’t send now. Try again or use e-mail.",network:"Network error. Please try again.",
+      errName:"Name is required", errEmail:"Valid e-mail required", errMsg:"Message is required"}
   }
 };
 let currentLang = (localStorage.getItem("lang") || (navigator.language||"pt")).startsWith("en") ? "en" : "pt";
@@ -45,6 +47,13 @@ const $ = (s, r=document)=>r.querySelector(s);
 const $$ = (s, r=document)=>Array.from(r.querySelectorAll(s));
 
 function t(path){ return path.split(".").reduce((a,k)=>a && a[k], I18N[currentLang]) || path; }
+
+function updateLangBtn(){
+  const btn = $("#langToggle");
+  if(!btn) return;
+  btn.textContent = currentLang === "pt" ? "EN" : "PT";
+  btn.setAttribute("aria-pressed", currentLang === "en" ? "true" : "false");
+}
 function applyI18n(){
   document.documentElement.lang = currentLang === "en" ? "en" : "pt-br";
   $$("[data-i18n]").forEach(el=>{
@@ -53,7 +62,7 @@ function applyI18n(){
     const val = t(key);
     if(attr) el.setAttribute(attr,val); else el.textContent = val;
   });
-  $("#langToggle").textContent = currentLang === "pt" ? "EN" : "PT";
+  updateLangBtn();
   renderizarProjetos(); renderizarCertificados(); renderizarEventos();
 }
 $("#langToggle")?.addEventListener("click",()=>{ currentLang = currentLang === "pt" ? "en" : "pt"; localStorage.setItem("lang", currentLang); applyI18n(); });
@@ -136,13 +145,14 @@ function criarCard({ imagem, titulo, title_en, descricao, desc_en, link, techs }
   if (tipo !== "evento") {
     const title = currentLang === "en" ? (title_en || titulo) : titulo;
     const desc  = currentLang === "en" ? (desc_en  || descricao) : descricao;
+    const moreLabel = `${currentLang==='en'?'View more: ':'Ver mais: '}${title.replace(/"/g,'&quot;')}`;
     card.innerHTML = `
       <img src="${imagem}" alt="${title}" loading="lazy" decoding="async" width="800" height="450" />
       <div class="card-body">
         <h3>${title}</h3>
         ${desc ? `<p>${desc}</p>` : ""}
         ${makeBadges(techs)}
-        ${link ? `<a class="btn btn-ghost" href="${link}" target="_blank" rel="noopener">${currentLang==='en'?'View more ↗':'Ver mais ↗'}</a>` : ""}
+        ${link ? `<a class="btn btn-ghost" href="${link}" target="_blank" rel="noopener" aria-label="${moreLabel}">${currentLang==='en'?'View more ↗':'Ver mais ↗'}</a>` : ""}
       </div>`;
     return card;
   }
@@ -197,12 +207,18 @@ function renderizarEventos(){
 
 /* Interações */
 function iniciarScrollspy(){
-  const links = $$('a[data-nav]'); const sections = links.map(a => $(a.getAttribute("href")));
+  const links = $$('a[data-nav]');
+  const sections = links.map(a => $(a.getAttribute("href")));
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
-      const id = `#${entry.target.id}`; const link = links.find(a => a.getAttribute("href") === id);
+      const id = `#${entry.target.id}`;
+      const link = links.find(a => a.getAttribute("href") === id);
       if (!link) return;
-      if (entry.isIntersecting) { links.forEach(l => l.classList.remove("is-active")); link.classList.add("is-active"); }
+      if (entry.isIntersecting) {
+        links.forEach(l => { l.classList.remove("is-active"); l.removeAttribute("aria-current"); });
+        link.classList.add("is-active");
+        link.setAttribute("aria-current","true");
+      }
     });
   }, { rootMargin: "-55% 0px -40% 0px", threshold: 0.02 });
   sections.forEach(sec => sec && io.observe(sec));
@@ -244,13 +260,14 @@ function iniciarTema(){
   toggle.addEventListener("click",()=>{ const cur=root.getAttribute("data-theme"); const nxt=cur==="dark"?"light":"dark"; root.setAttribute("data-theme",nxt); localStorage.setItem("theme",nxt); });
 }
 
-/* Lightbox */
+/* Lightbox com focus trap e ESC */
 function iniciarLightbox(){
   const lb=$("#lightbox"), img=$("#lightboxImg"), close=$("#lightboxClose");
-  document.addEventListener("click",(e)=>{ const t=e.target; if(!(t instanceof HTMLElement)) return;
-    const src=t.getAttribute("data-lightbox"); if(src){ img.src=src; lb.classList.add("is-open"); lb.setAttribute("aria-hidden","false"); }});
-  const fechar=()=>{ lb.classList.remove("is-open"); lb.setAttribute("aria-hidden","true"); img.removeAttribute("src"); };
-  close.addEventListener("click",fechar); lb.addEventListener("click",(e)=>{ if(e.target===lb) fechar(); }); document.addEventListener("keydown",(e)=>{ if(e.key==="Escape") fechar(); });
+  let lastFocused=null;
+  document.addEventListener("click",(e)=>{ const t=e.target; const src=t?.getAttribute?.("data-lightbox"); if(src){ lastFocused=document.activeElement; img.src=src; lb.classList.add("is-open"); lb.setAttribute("aria-hidden","false"); close.focus(); }});
+  const fechar=()=>{ lb.classList.remove("is-open"); lb.setAttribute("aria-hidden","true"); img.removeAttribute("src"); lastFocused?.focus(); };
+  close.addEventListener("click",fechar); lb.addEventListener("click",(e)=>{ if(e.target===lb) fechar(); });
+  document.addEventListener("keydown",(e)=>{ if(!lb.classList.contains('is-open')) return; if(e.key==="Escape") fechar(); if(e.key==="Tab"){ e.preventDefault(); close.focus(); } });
 }
 
 /* CV */
@@ -263,12 +280,48 @@ async function configurarCV(){
   }
 }
 
-/* Contato (FormSubmit AJAX) */
+/* ======= Formulário com ERROS POR CAMPO ======= */
 function iniciarContato(){
   const form=$("#contatoForm"), feedback=$("#contatoFeedback"); if(!form) return;
-  form.addEventListener("submit",async(e)=>{
-    e.preventDefault(); feedback.textContent = t("contact.sending");
+
+  const setFieldError=(id,msg)=>{
+    const input = document.getElementById(id);
+    const err = document.getElementById('err-'+id);
+    if(msg){
+      input.setAttribute('aria-invalid','true');
+      input.setAttribute('aria-describedby','err-'+id);
+      err.textContent = msg;
+      err.setAttribute('role','alert');
+    }else{
+      input.removeAttribute('aria-invalid');
+      input.removeAttribute('aria-describedby');
+      err.textContent = '';
+      err.removeAttribute('role');
+    }
+  };
+
+  const validate=()=>{
+    let ok=true;
     const data = Object.fromEntries(new FormData(form));
+    setFieldError('nome',''); setFieldError('email',''); setFieldError('mensagem',''); // limpa
+    if(!data.nome) { setFieldError('nome', t('contact.errName')); ok=false; }
+    if(!/^\S+@\S+\.\S+$/.test(data.email||'')) { setFieldError('email', t('contact.errEmail')); ok=false; }
+    if(!data.mensagem) { setFieldError('mensagem', t('contact.errMsg')); ok=false; }
+    return ok ? data : null;
+  };
+
+  // limpar erro ao digitar
+  ['nome','email','mensagem','assunto'].forEach(id=>{
+    const el = document.getElementById(id);
+    el?.addEventListener('input',()=> setFieldError(id,''));
+  });
+
+  form.addEventListener("submit",async(e)=>{
+    e.preventDefault();
+    const data = validate();
+    if(!data) return;
+
+    feedback.textContent = t("contact.sending");
     const endpoint = `https://formsubmit.co/ajax/${encodeURIComponent(FORM_EMAIL)}`;
     try{
       const res = await fetch(endpoint,{
@@ -286,21 +339,6 @@ function iniciarContato(){
   });
 }
 
-/* Métricas */
-function iniciarMetricas(){
-  const metrics=$$(".metric");
-  const io=new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(!e.isIntersecting) return;
-      const alvo=parseInt(e.target.dataset.count||"0",10), span=e.target.querySelector(".count");
-      let v=0, inc=Math.max(1,Math.round(alvo/40));
-      const timer=setInterval(()=>{ v+=inc; if(v>=alvo){ v=alvo; clearInterval(timer);} span.textContent=v; },20);
-      io.unobserve(e.target);
-    });
-  },{threshold:0.5});
-  metrics.forEach(m=>io.observe(m));
-}
-
 /* Hambúrguer */
 function iniciarMenu(){
   const btn=$("#menuToggle"), nav=$("#siteNav"), backdrop=$("#menuBackdrop");
@@ -310,19 +348,21 @@ function iniciarMenu(){
     backdrop.classList.toggle("is-open", open);
     backdrop.hidden = !open;
     btn.setAttribute("aria-expanded", open ? "true" : "false");
+    if(open) setTimeout(()=>$("#siteNav a")?.focus(),0);
   };
   btn.addEventListener("click",()=>setState(!nav.classList.contains("is-open")));
   backdrop.addEventListener("click",()=>setState(false));
   $("#siteNav").addEventListener("click",e=>{ if(e.target.tagName==="A") setState(false); });
-  document.addEventListener("keydown",e=>{ if(e.key==="Escape") setState(false); });
+  document.addEventListener("keydown",e=>{ if(e.key==="Escape") setState(false); if(e.key==="Tab" && nav.classList.contains("is-open") && !nav.contains(document.activeElement)) { e.preventDefault(); $("#siteNav a")?.focus(); } });
 }
 
 /* Init */
 document.addEventListener("DOMContentLoaded", ()=>{
   applyI18n();
   iniciarScrollspy(); iniciarReveal(); iniciarBuscaEFiltro(); iniciarCarrosselCertificados();
-  iniciarFabTopo(); iniciarTema(); iniciarLightbox(); configurarCV(); iniciarContato(); iniciarMetricas(); iniciarMenu();
+  iniciarFabTopo(); iniciarTema(); iniciarLightbox(); configurarCV(); iniciarContato(); iniciarMenu();
 });
+
 
 
   

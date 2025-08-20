@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Skip link -->
+  <!-- Skip links -->
   <a class="skip-link" href="#conteudo" data-i18n="a11y.skip">Ir para o conteúdo</a>
 
   <!-- HEADER -->
@@ -50,7 +50,7 @@
 
       <div class="actions">
         <!-- Switch idioma -->
-        <button id="langToggle" class="chip lang-chip" aria-label="Trocar idioma">EN</button>
+        <button id="langToggle" class="chip lang-chip" aria-label="Trocar idioma" aria-pressed="false">EN</button>
 
         <!-- Switch tema -->
         <button id="themeToggle" class="icon-btn" aria-label="Alternar tema">
@@ -76,7 +76,7 @@
       <div class="container hero-grid">
         <div class="hero-text">
           <h1 id="hero-title" data-i18n="hero.title">Programação Paralela &amp; Processamento de Imagens</h1>
-          <p data-i18n="hero.subtitle">Desenvolvo soluções de alto desempenho aplicadas a visão computacional, bancos de dados, sistemas distribuídos e desenvolvimento web.</p>
+          <p data-i18n="hero.subtitle">Desenvolvo soluções de alto desempenho aplicadas a visão computacional, bancos de dados e sistemas distribuídos.</p>
           <div class="cta">
             <a class="btn btn-primary" href="https://github.com/SebasNeto" target="_blank" rel="noopener" data-i18n="hero.github">Ver GitHub ↗</a>
             <a id="cvBtn" class="btn btn-ghost" href="#" target="_blank" rel="noopener" data-i18n="hero.cv">Baixar CV</a>
@@ -93,7 +93,7 @@
       <div class="container">
         <h2 id="sobre-title" class="section-title" data-i18n="about.title">Sobre</h2>
         <p class="lead" data-i18n="about.text">
-          Graduado em Ciência da Computação pelo Instituto de Computação ICOMP da Universidade Federal do Amazonas - UFAM. Atuo com paralelismo aplicado a imagens, bancos de dados e sistemas distribuídos.
+          Graduando em Ciência da Computação pela UFAM. Atuo com paralelismo aplicado a imagens, bancos de dados e sistemas distribuídos.
         </p>
       </div>
     </section>
@@ -132,7 +132,7 @@
       <div class="container">
         <div class="section-head">
           <h2 id="projetos-title" class="section-title" data-i18n="projects.title">Meus Projetos</h2>
-          <div class="filters">
+          <div class="filters" role="search">
             <input id="buscaProjetos" class="input" type="search" data-i18n="projects.search" data-i18n-attr="placeholder" placeholder="Buscar por título ou descrição..." aria-label="Buscar projetos" />
             <div class="chips" role="group" aria-label="Filtro">
               <button class="chip is-active" data-cat="all" data-i18n="filters.all">Todos</button>
@@ -192,18 +192,22 @@
           <div class="form-row">
             <label for="nome" data-i18n="contact.name">Nome</label>
             <input id="nome" name="nome" type="text" required placeholder="Seu nome" data-i18n="contact.namePh" data-i18n-attr="placeholder" />
+            <small id="err-nome" class="field-error" aria-live="polite"></small>
           </div>
           <div class="form-row">
             <label for="email">E-mail</label>
             <input id="email" name="email" type="email" required placeholder="seu@email.com" data-i18n="contact.emailPh" data-i18n-attr="placeholder" />
+            <small id="err-email" class="field-error" aria-live="polite"></small>
           </div>
           <div class="form-row">
             <label for="assunto" data-i18n="contact.subject">Assunto</label>
             <input id="assunto" name="assunto" type="text" placeholder="Tema da mensagem" data-i18n="contact.subjectPh" data-i18n-attr="placeholder" />
+            <small id="err-assunto" class="field-error" aria-live="polite"></small>
           </div>
           <div class="form-row">
             <label for="mensagem" data-i18n="contact.message">Mensagem</label>
             <textarea id="mensagem" name="mensagem" required rows="5" placeholder="Como posso ajudar?" data-i18n="contact.messagePh" data-i18n-attr="placeholder"></textarea>
+            <small id="err-mensagem" class="field-error" aria-live="polite"></small>
           </div>
           <input type="text" name="_honey" style="display:none">
           <div class="form-actions">
@@ -230,6 +234,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 

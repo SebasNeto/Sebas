@@ -356,11 +356,53 @@ function iniciarMenu(){
   document.addEventListener("keydown",e=>{ if(e.key==="Escape") setState(false); if(e.key==="Tab" && nav.classList.contains("is-open") && !nav.contains(document.activeElement)) { e.preventDefault(); $("#siteNav a")?.focus(); } });
 }
 
+// --- MÉTRICAS (anima de 0 até data-count; respeita reduced-motion) ---
+function iniciarMetricas(){
+  const metrics = $$(".metric");
+  if (!metrics.length) return;
+
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce) {
+    metrics.forEach(m => {
+      const alvo = parseInt(m.dataset.count || "0", 10);
+      const span = m.querySelector(".count");
+      if (span) span.textContent = alvo;
+    });
+    return;
+  }
+
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if (!entry.isIntersecting) return;
+
+      const el = entry.target;
+      const alvo = parseInt(el.dataset.count || "0", 10);
+      const span = el.querySelector(".count");
+      if (!span) return;
+
+      const dur = 800; // ms
+      const t0 = performance.now();
+
+      function tick(now){
+        const p = Math.min(1, (now - t0) / dur);
+        const val = Math.round(alvo * p);
+        span.textContent = val;
+        if (p < 1) requestAnimationFrame(tick);
+        else io.unobserve(el);
+      }
+      requestAnimationFrame(tick);
+    });
+  }, { threshold: 0.4 });
+
+  metrics.forEach(m => io.observe(m));
+}
+
+
 /* Init */
 document.addEventListener("DOMContentLoaded", ()=>{
   applyI18n();
   iniciarScrollspy(); iniciarReveal(); iniciarBuscaEFiltro(); iniciarCarrosselCertificados();
-  iniciarFabTopo(); iniciarTema(); iniciarLightbox(); configurarCV(); iniciarContato(); iniciarMenu();
+  iniciarFabTopo(); iniciarTema(); iniciarLightbox(); configurarCV(); iniciarContato(); iniciarMenu(); iniciarMetricas();
 });
 
 

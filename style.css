@@ -100,8 +100,8 @@ body{
 .card:hover{transform:translateY(-2px) scale(1.005);border-color:color-mix(in oklab,var(--brand) 25%,var(--border));box-shadow:var(--shadow);opacity:1}
 .card img{width:100%;height:180px;object-fit:cover;display:block}
 .card-body{padding:.9rem}
-.card h3{font-family:'Inter';font-size:1.05rem;line-height:1.3}
-.card p{color:var(--muted);margin-top:.4rem;font-size:.97rem}
+.card h3{font-family:'Inter';font-size:1.05rem;line-height:1.3;text-align: justify;}
+.card p{color:var(--muted);margin-top:.4rem;font-size:.97rem;text-align:justify}
 .card .btn{margin-top:.65rem;font-size:.93rem}
 
 /* Badges */
@@ -156,8 +156,55 @@ input[aria-invalid="true"], textarea[aria-invalid="true"]{border-color:#b91c1c}
 .observe{opacity:0;transform:translateY(10px);transition:opacity .5s,transform .5s}
 .observe.is-visible{opacity:1;transform:translateY(0)}
 
+/* ====== TCC Section ====== */
+.tcc-grid{
+  display:grid;
+  grid-template-columns:1fr 1.4fr 1fr;
+  gap:1rem;
+  align-items:start;
+}
+.tcc-thumb{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+}
+.tcc-thumb img{width:100%;height:auto;display:block;cursor:zoom-in}
+.tcc-thumb figcaption{padding:.5rem .75rem;color:var(--muted);font-size:.9rem}
+.tcc-text{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  padding:1rem;
+}
+.tcc-text h3{font-family:'Inter';margin-top:.25rem}
+.tcc-text p{color:var(--muted);margin:.4rem 0; text-align: justify;}
+.tcc-list{margin:.4rem 0 .2rem 1rem}
+.tcc-actions{margin-top:1rem}
+
+.tcc-text ul {
+  text-align: justify;    
+  padding-left: 1.2rem;    
+  margin-top: .5rem;
+}
+
+.tcc-text li {
+  margin-bottom: .4rem;
+  text-align: justify;    
+}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}.hero-media{order:-1}
+  .tcc-grid{grid-template-columns:1fr;gap:.8rem}
+}
+@media (max-width:600px){
+  .card h3 {
+    text-align:center;
+  }
+}
+
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-@media (max-width:900px){.hero-grid{grid-template-columns:1fr}.hero-media{order:-1}}
+
 
 
 

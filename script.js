@@ -2,7 +2,7 @@
    CONFIG – TROCAR AQUI
    =========================== */
 const GA_ID = "G-XXXXXXXXXX";          // ex.: G-ABC123DEF
-const CV_URL = "https://seu-usuario.github.io/cv.pdf"; // link do seu CV
+const CV_URL = "Sebastião_Bicharra_Neto_Curriculo_CV_.pdf"; // link do seu CV
 const FORM_EMAIL = "sebastiaobicharraneto@gmail.com";  // FormSubmit AJAX
 
 // GA se ID válido
@@ -17,9 +17,28 @@ if (GA_ID && GA_ID !== "G-XXXXXXXXXX") {
    =========================== */
 const I18N = {
   pt:{a11y:{skip:"Ir para o conteúdo"},
-    nav:{about:"Sobre",achievements:"Conquistas",projects:"Projetos",certs:"Certificações",events:"Eventos",skills:"Habilidades",contact:"Contato"},
+    nav:{about:"Sobre",tcc:"TCC",achievements:"Conquistas",projects:"Projetos",certs:"Certificações",events:"Eventos",skills:"Habilidades",contact:"Contato"},
     hero:{title:"Programação Paralela & Visão Computacional",subtitle:"Desenvolvo soluções de alto desempenho aplicadas a Visão Computacional e Programação Paralela.",github:"Ver GitHub ↗",cv:"Baixar CV"},
     about:{title:"Sobre",text:"Graduado em Ciência da Computação pelo Instituto de Computação  ICOMP/UFAM. Atuo com paralelismo aplicado ao processamento de imagens e visão computacional."},
+
+    /* TCC */
+    tcc:{
+      title:"Trabalho de Conclusão de Curso (TCC)",
+      caption1:"Capa do TCC",
+      caption2:"Apresentação do TCC",
+      topic:"Tema",
+      topicText:"Programação paralela aplicada ao processamento de imagens e computação de alto desempenho: uma abordagem experimental.",
+      abstract:"Resumo",
+      abstractText1:"O trabalho investiga, por experimentos, versões sequenciais (Python, C) e paralelas (C+Threads, OpenMP, Julia e Halide) em algoritmos de visão (transformações radiométricas, filtragens, detecção de bordas e Otsu) e em problemas gerais (multiplicação de matrizes, ordenação, buscas, redução e Monte Carlo), variando o número de núcleos para medir speedup, eficiência e escalabilidade.",
+      abstractText2:"Os resultados mostram reduções expressivas de tempo nas abordagens paralelas, com destaque recorrente para Halide, que obteve os menores tempos nas técnicas de imagem e ótima escalabilidade conforme o aumento de threads.",
+      highlights:"Destaques",
+      hl1:"Comparações sistemáticas entre linguagens e frameworks em diferentes arquiteturas multicore.",
+      hl2:"Metodologia de benchmarks com médias e speedup, conjuntos de imagens por faixas de pixels e tamanhos crescentes de vetores/matrizes.",
+      hl3:"Diretrizes práticas sobre quando o custo de paralelizar compensa, considerando padrão de acesso à memória e overhead.",
+      source:"Resumo adaptado do TCC (PDF no anexo).",
+      btnPdf:"Abrir PDF ↗"
+    },
+
     achievements:{title:"Destaque de conquistas",speedup:"Speedup em paralelismo",projects:"Projetos/estudos entregues",talks:"Apresentações & eventos",areas:"Áreas de foco"},
     projects:{title:"Meus Projetos",search:"Buscar por título ou descrição..."},
     filters:{all:"Todos",parallelism:"Paralelismo",databases:"Banco de Dados",cv:"Visão Computacional",other:"Outros"},
@@ -29,9 +48,28 @@ const I18N = {
       errName:"Nome é obrigatório", errEmail:"E-mail válido é obrigatório", errMsg:"Mensagem é obrigatória"}
   },
   en:{a11y:{skip:"Skip to content"},
-    nav:{about:"About",achievements:"Highlights",projects:"Projects",certs:"Certificates",events:"Events",skills:"Skills",contact:"Contact"},
+    nav:{about:"About",tcc:"Thesis",achievements:"Highlights",projects:"Projects",certs:"Certificates",events:"Events",skills:"Skills",contact:"Contact"},
     hero:{title:"Parallel Programming & Computer Vision",subtitle:"I develop high-performance solutions applied to Computer Vision and Parallel Programming.",github:"View GitHub ↗",cv:"Download CV"},
     about:{title:"About",text:"Graduated in Computer Science from the Institute of Computing (ICOMP/UFAM). I work with parallelism applied to image processing and computer vision."},
+
+    /* TCC */
+    tcc:{
+      title:"Undergraduate Thesis",
+      caption1:"Thesis cover",
+      caption2:"Thesis defense",
+      topic:"Topic",
+      topicText:"Parallel programming applied to image processing and high-performance computing: an experimental approach.",
+      abstract:"Abstract",
+      abstractText1:"This work experimentally compares sequential (Python, C) and parallel (C+Threads, OpenMP, Julia, Halide) versions across vision algorithms (radiometric transforms, filters, edge detection, Otsu) and general problems (matrix multiplication, sorting, searches, reduction, Monte Carlo), varying CPU cores to measure speedup, efficiency and scalability.",
+      abstractText2:"Results show expressive time reductions with parallel approaches; Halide repeatedly achieved the lowest times on image tasks with strong scalability as threads increase.",
+      highlights:"Highlights",
+      hl1:"Systematic comparisons across languages and frameworks on multiple multicore architectures.",
+      hl2:"Benchmarking methodology with averages and speedup; image sets by pixel ranges; growing vector/matrix sizes.",
+      hl3:"Practical guidance on when parallelization pays off, considering memory access patterns and overhead.",
+      source:"Summary adapted from the thesis (attached PDF).",
+      btnPdf:"Open PDF ↗"
+    },
+
     achievements:{title:"Highlights",speedup:"Parallelism speedup",projects:"Delivered projects/studies",talks:"Talks & events",areas:"Focus areas"},
     projects:{title:"My Projects",search:"Search by title or description..."},
     filters:{all:"All",parallelism:"Parallelism",databases:"Databases",cv:"Computer Vision",other:"Other"},
@@ -422,6 +460,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
   iniciarScrollspy(); iniciarReveal(); iniciarBuscaEFiltro(); iniciarCarrosselCertificados();
   iniciarFabTopo(); iniciarTema(); iniciarLightbox(); configurarCV(); iniciarContato(); iniciarMenu(); atualizarMetricas(); iniciarMetricas();
 });
+
 
 
 

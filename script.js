@@ -18,24 +18,24 @@ if (GA_ID && GA_ID !== "G-XXXXXXXXXX") {
 const I18N = {
   pt:{a11y:{skip:"Ir para o conteúdo"},
     nav:{about:"Sobre",achievements:"Conquistas",projects:"Projetos",certs:"Certificações",events:"Eventos",skills:"Habilidades",contact:"Contato"},
-    hero:{title:"Programação Paralela & Processamento de Imagens",subtitle:"Desenvolvo soluções de alto desempenho aplicadas a visão computacional, bancos de dados e sistemas distribuídos.",github:"Ver GitHub ↗",cv:"Baixar CV"},
-    about:{title:"Sobre",text:"Graduando em Ciência da Computação pela UFAM. Atuo com paralelismo aplicado a imagens, bancos de dados e sistemas distribuídos."},
-    achievements:{title:"Destaque de conquistas",speedup:"Speedup em paralelismo (ex.)",projects:"Projetos/estudos entregues",talks:"Apresentações & eventos",areas:"Áreas de foco (VC, DB)"},
+    hero:{title:"Programação Paralela & Visão Computacional",subtitle:"Desenvolvo soluções de alto desempenho aplicadas a Visão Computacional e Programação Paralela.",github:"Ver GitHub ↗",cv:"Baixar CV"},
+    about:{title:"Sobre",text:"Graduado em Ciência da Computação pelo Instituto de Computação  ICOMP/UFAM. Atuo com paralelismo aplicado ao processamento de imagens e visão computacional."},
+    achievements:{title:"Destaque de conquistas",speedup:"Speedup em paralelismo",projects:"Projetos/estudos entregues",talks:"Apresentações & eventos",areas:"Áreas de foco"},
     projects:{title:"Meus Projetos",search:"Buscar por título ou descrição..."},
     filters:{all:"Todos",parallelism:"Paralelismo",databases:"Banco de Dados",cv:"Visão Computacional",other:"Outros"},
-    certs:{title:"Certificações / Cursos"},
+    certs:{title:"Certificações"},
     events:{title:"Eventos"}, skills:{title:"Habilidades"},
     contact:{title:"Vamos conversar",name:"Nome",namePh:"Seu nome",subject:"Assunto",subjectPh:"Tema da mensagem",message:"Mensagem",messagePh:"Como posso ajudar?",emailPh:"seu@email.com",send:"Enviar mensagem",emailAlt:"Enviar por e-mail",sending:"Enviando...",sent:"Mensagem enviada! Vou responder em breve.",error:"Não foi possível enviar. Tente novamente ou use o e-mail.",network:"Falha de rede. Tente novamente.",
       errName:"Nome é obrigatório", errEmail:"E-mail válido é obrigatório", errMsg:"Mensagem é obrigatória"}
   },
   en:{a11y:{skip:"Skip to content"},
     nav:{about:"About",achievements:"Highlights",projects:"Projects",certs:"Certificates",events:"Events",skills:"Skills",contact:"Contact"},
-    hero:{title:"Parallel Programming & Image Processing",subtitle:"I build high-performance solutions for computer vision, databases and distributed systems.",github:"View GitHub ↗",cv:"Download CV"},
-    about:{title:"About",text:"Computer Science undergrad at UFAM. I work with parallelism applied to images, databases and distributed systems."},
-    achievements:{title:"Highlights",speedup:"Parallelism speedup (example)",projects:"Delivered projects/studies",talks:"Talks & events",areas:"Focus areas (CV, DB)"},
+    hero:{title:"Parallel Programming & Computer Vision",subtitle:"I develop high-performance solutions applied to Computer Vision and Parallel Programming.",github:"View GitHub ↗",cv:"Download CV"},
+    about:{title:"About",text:"Graduated in Computer Science from the Institute of Computing (ICOMP/UFAM). I work with parallelism applied to image processing and computer vision."},
+    achievements:{title:"Highlights",speedup:"Parallelism speedup",projects:"Delivered projects/studies",talks:"Talks & events",areas:"Focus areas"},
     projects:{title:"My Projects",search:"Search by title or description..."},
     filters:{all:"All",parallelism:"Parallelism",databases:"Databases",cv:"Computer Vision",other:"Other"},
-    certs:{title:"Certificates / Courses"},
+    certs:{title:"Certificates"},
     events:{title:"Events"}, skills:{title:"Skills"},
     contact:{title:"Let’s talk",name:"Name",namePh:"Your name",subject:"Subject",subjectPh:"Message topic",message:"Message",messagePh:"How can I help?",emailPh:"your@email.com",send:"Send message",emailAlt:"Send via email",sending:"Sending...",sent:"Message sent! I’ll get back soon.",error:"Couldn’t send now. Try again or use e-mail.",network:"Network error. Please try again.",
       errName:"Name is required", errEmail:"Valid e-mail required", errMsg:"Message is required"}
@@ -71,23 +71,23 @@ $("#langToggle")?.addEventListener("click",()=>{ currentLang = currentLang === "
    Dados
    =========================== */
 const projetos = [
-  { titulo:"A inclusão da computação como um elemento complementar de estudo no 9º ano do ensino fundamental",
-    title_en:"Introducing computing as a complementary study element in 9th grade",
+  { titulo:"A inclusão da computação como um elemento complementar de estudo no 9º ano do ensino fundamental.",
+    title_en:"Introducing computing as a complementary study element in 9th grade.",
     descricao:"Uso de recursos tecnológicos para ensino-aprendizagem em lógica e programação.",
     desc_en:"Using technology to improve teaching and learning in logic and programming.",
     imagem:"imagens/cert-uea.PNG", link:"#", tags:["Outros"], techs:["Python","HTML","CSS","JavaScript"] },
-  { titulo:"Uma análise empírica sobre o desempenho de algoritmos de ordenação",
-    title_en:"An empirical analysis of sorting algorithm performance",
+  { titulo:"Uma análise empírica sobre o desempenho de algoritmos de ordenação.",
+    title_en:"An empirical analysis of sorting algorithm performance.",
     descricao:"Comparação de cinco algoritmos de ordenação em grandes volumes de dados.",
     desc_en:"Comparative study of five sorting algorithms on large datasets.",
     imagem:"imagens/cert-super.PNG", link:"https://github.com/SebasNeto/PROJETO-SUPER---UFAM.git", tags:["Banco de Dados"], techs:["C++","Python"] },
-  { titulo:"Análise comparativa de desempenho entre algoritmos paralelos e tradicionais para processamento de imagens",
-    title_en:"Performance comparison between parallel and traditional image processing algorithms",
+  { titulo:"Análise comparativa de desempenho entre algoritmos paralelos e tradicionais para processamento de imagens.",
+    title_en:"Performance comparison between parallel and traditional image processing algorithms.",
     descricao:"Impacto da execução paralela em algoritmos de visão, comparando com versões tradicionais.",
     desc_en:"Assessing the impact of parallel execution on vision algorithms vs. traditional versions.",
     imagem:"imagens/cert-super-2.PNG", link:"https://github.com/SebasNeto/Processamento-de-Imagens---Programacao-Paralela.git", tags:["Paralelismo","Visão Computacional"], techs:["Halide","OpenMP","C++","OpenCV"] },
-  { titulo:"Processamento de Imagens e Programação Paralela",
-    title_en:"Image Processing & Parallel Programming",
+  { titulo:"Processamento de Imagens e Programação Paralela.",
+    title_en:"Image Processing & Parallel Programming.",
     descricao:"Aplicação de técnicas de imagem com paralelismo para ganho de desempenho.",
     desc_en:"Applying image processing with parallelism for performance gains.",
     imagem:"imagens/PIBIC.jpg", link:"https://github.com/SebasNeto/Processamento-de-Imagens---Programacao-Paralela.git", tags:["Paralelismo","Visão Computacional"], techs:["Halide","OpenMP","C++","Python"] }
@@ -356,6 +356,24 @@ function iniciarMenu(){
   document.addEventListener("keydown",e=>{ if(e.key==="Escape") setState(false); if(e.key==="Tab" && nav.classList.contains("is-open") && !nav.contains(document.activeElement)) { e.preventDefault(); $("#siteNav a")?.focus(); } });
 }
 
+// --- Atualiza valores das métricas dinamicamente ---
+function atualizarMetricas() {
+  const el = sel => document.querySelector(`.metric[data-metric="${sel}"]`);
+
+  // Defina as regras de contagem aqui:
+  const valores = {
+    speedup: 1000,                              // fixo ou calculado
+    projects: projetos.length,               // conta projetos do array
+    talks: eventos.length,                   // conta eventos
+    areas: new Set(projetos.flatMap(p=>p.tags || [])).size // conta áreas únicas
+  };
+
+  for (const [k,v] of Object.entries(valores)) {
+    const node = el(k);
+    if (node) node.dataset.count = String(v);
+  }
+}
+
 // --- MÉTRICAS (anima de 0 até data-count; respeita reduced-motion) ---
 function iniciarMetricas(){
   const metrics = $$(".metric");
@@ -402,7 +420,7 @@ function iniciarMetricas(){
 document.addEventListener("DOMContentLoaded", ()=>{
   applyI18n();
   iniciarScrollspy(); iniciarReveal(); iniciarBuscaEFiltro(); iniciarCarrosselCertificados();
-  iniciarFabTopo(); iniciarTema(); iniciarLightbox(); configurarCV(); iniciarContato(); iniciarMenu(); iniciarMetricas();
+  iniciarFabTopo(); iniciarTema(); iniciarLightbox(); configurarCV(); iniciarContato(); iniciarMenu(); atualizarMetricas(); iniciarMetricas();
 });
 
 

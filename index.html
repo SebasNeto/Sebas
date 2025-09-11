@@ -76,7 +76,7 @@
       <div class="container hero-grid">
         <div class="hero-text">
           <h1 id="hero-title" data-i18n="hero.title">Programação Paralela &amp; Processamento de Imagens</h1>
-          <p data-i18n="hero.subtitle">Desenvolvo soluções de alto desempenho aplicadas a visão computacional, bancos de dados e sistemas distribuídos.</p>
+          <p data-i18n="hero.subtitle">Desenvolvo soluções de alto desempenho aplicadas a Visão Computacional e Programação Paralela.</p>
           <div class="cta">
             <a class="btn btn-primary" href="https://github.com/SebasNeto" target="_blank" rel="noopener" data-i18n="hero.github">Ver GitHub ↗</a>
             <a id="cvBtn" class="btn btn-ghost" href="#" target="_blank" rel="noopener" data-i18n="hero.cv">Baixar CV</a>
@@ -93,39 +93,70 @@
       <div class="container">
         <h2 id="sobre-title" class="section-title" data-i18n="about.title">Sobre</h2>
         <p class="lead" data-i18n="about.text">
-          Graduando em Ciência da Computação pela UFAM. Atuo com paralelismo aplicado a imagens, bancos de dados e sistemas distribuídos.
+          Graduado em Ciência da Computação pelo Instituto de Computação  ICOMP/UFAM. Atuo com paralelismo aplicado ao processamento de imagens e visão computacional.
         </p>
       </div>
     </section>
 
+
     <!-- CONQUISTAS -->
     <section id="conquistas" class="section observe" aria-labelledby="conqs-title">
-      <div class="container">
+    <div class="container">
         <h2 id="conqs-title" class="section-title" data-i18n="achievements.title">Destaque de conquistas</h2>
+
         <div class="metrics-grid">
-          <article class="metric" data-count="7">
-            <div class="metric-icon"><svg viewBox="0 0 24 24" class="icon"><path d="M3 13h12l-4 4m4-4-4-4M21 7v10"/></svg></div>
+        <!-- SPEEDUP -->
+        <article class="metric" data-metric="speedup" data-count="7">
+            <div class="metric-icon">
+            <!-- relógio/velocidade -->
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M12 2.25a9.75 9.75 0 1 0 9.75 9.75A9.76 9.76 0 0 0 12 2.25zm.75 4.5a.75.75 0 0 0-1.5 0v5.19l3.72 2.15a.75.75 0 0 0 .75-1.3L12.75 11V6.75z" clip-rule="evenodd"/>
+            </svg>
+            </div>
             <p class="metric-value"><span class="count">0</span>×</p>
-            <p class="metric-label" data-i18n="achievements.speedup">Speedup em paralelismo (ex.)</p>
-          </article>
-          <article class="metric" data-count="10">
-            <div class="metric-icon"><svg viewBox="0 0 24 24" class="icon"><path d="M4 4h16v14H4zM4 20h16"/></svg></div>
+            <p class="metric-label" data-i18n="achievements.speedup">Speedup em paralelismo</p>
+        </article>
+
+        <!-- PROJETOS -->
+        <article class="metric" data-metric="projects" data-count="0">
+            <div class="metric-icon">
+            <!-- pasta -->
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M2.25 6.75A2.25 2.25 0 0 1 4.5 4.5h4.086a2.25 2.25 0 0 1 1.59.659L12 6.982h7.5a2.25 2.25 0 0 1 2.25 2.25v8.25a2.25 2.25 0 0 1-2.25 2.25H4.5a2.25 2.25 0 0 1-2.25-2.25V6.75z"/>
+            </svg>
+            </div>
             <p class="metric-value"><span class="count">0</span>+</p>
             <p class="metric-label" data-i18n="achievements.projects">Projetos/estudos entregues</p>
-          </article>
-          <article class="metric" data-count="3">
-            <div class="metric-icon"><svg viewBox="0 0 24 24" class="icon"><path d="M4 6h16M4 12h10M4 18h6"/></svg></div>
+        </article>
+
+        <!-- EVENTOS -->
+        <article class="metric" data-metric="talks" data-count="0">
+            <div class="metric-icon">
+            <!-- calendário -->
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M6.75 3a.75.75 0 0 0-1.5 0v.75H3a.75.75 0 0 0-.75.75v15a.75.75 0 0 0 .75.75h18a.75.75 0 0 0 .75-.75v-15a.75.75 0 0 0-.75-.75h-2.25V3a.75.75 0 0 0-1.5 0v.75H6.75V3zM20.25 9H3.75v9.75h16.5V9z"/>
+            </svg>
+            </div>
             <p class="metric-value"><span class="count">0</span></p>
             <p class="metric-label" data-i18n="achievements.talks">Apresentações & eventos</p>
-          </article>
-          <article class="metric" data-count="2">
-            <div class="metric-icon"><svg viewBox="0 0 24 24" class="icon"><path d="M12 2v20M5 9l7-7 7 7"/></svg></div>
+        </article>
+
+        <!-- ÁREAS -->
+        <article class="metric" data-metric="areas" data-count="0">
+            <div class="metric-icon">
+            <!-- camadas -->
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2.25a.75.75 0 0 1 .375.1l8.25 4.875a.75.75 0 0 1 0 1.3l-8.25 4.875a.75.75 0 0 1-.75 0L3.375 8.525a.75.75 0 0 1 0-1.3L11.625 2.35A.75.75 0 0 1 12 2.25zm0 8.25a.75.75 0 0 1 .375.1l8.25 4.875a.75.75 0 0 1 0 1.3l-8.25 4.875a.75.75 0 0 1-.75 0L3.375 16.775a.75.75 0 0 1 0-1.3l8.25-4.875a.75.75 0 0 1 .375-.1z"/>
+            </svg>
+            </div>
             <p class="metric-value"><span class="count">0</span>+</p>
-            <p class="metric-label" data-i18n="achievements.areas">Áreas de foco (VC, DB)</p>
-          </article>
+            <p class="metric-label" data-i18n="achievements.areas">Áreas de foco</p>
+        </article>
         </div>
-      </div>
+    </div>
     </section>
+
+
 
     <!-- PROJETOS -->
     <section id="projetos" class="section observe" aria-labelledby="projetos-title">
@@ -151,7 +182,7 @@
     <section id="certificados" class="section observe" aria-labelledby="certificados-title">
       <div class="container">
         <div class="section-head">
-          <h2 id="certificados-title" class="section-title" data-i18n="certs.title">Certificações / Cursos</h2>
+          <h2 id="certificados-title" class="section-title" data-i18n="certs.title">Certificações</h2>
           <div class="carousel-actions">
             <button class="icon-btn" id="certPrev" aria-label="Anterior">‹</button>
             <button class="icon-btn" id="certNext" aria-label="Próximo">›</button>
@@ -171,18 +202,73 @@
 
     <!-- SKILLS -->
     <section id="skills" class="section observe" aria-labelledby="skills-title">
-      <div class="container">
+    <div class="container">
         <h2 id="skills-title" class="section-title" data-i18n="skills.title">Habilidades</h2>
         <ul class="skills-grid">
-          <li class="skill skill--python"><svg class="skill-icon" viewBox="0 0 24 24"><path d="M4 8c0-2 2-4 4-4h4v4H8v4h4v4H8c-2 0-4-2-4-4zM12 4h4c2 0 4 2 4 4s-2 4-4 4h-4"/></svg><span>Python</span></li>
-          <li class="skill skill--cpp"><svg class="skill-icon" viewBox="0 0 24 24"><path d="M4 5h4l4 6 4-6h4l-6 9 6 9h-4l-4-6-4 6H4l6-9z"/></svg><span>C / C++</span></li>
-          <li class="skill skill--halide"><svg class="skill-icon" viewBox="0 0 24 24"><path d="M3 12h6l3-5 3 5h6M6 14h12M8 18h8"/></svg><span>Halide</span></li>
-          <li class="skill skill--openmp"><svg class="skill-icon" viewBox="0 0 24 24"><path d="M4 4h16v4H4zM4 10h16v4H4zM4 16h16v4H4z"/></svg><span>OpenMP</span></li>
-          <li class="skill skill--web"><svg class="skill-icon" viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h6"/></svg><span>HTML, CSS, JS</span></li>
-          <li class="skill skill--db"><svg class="skill-icon" viewBox="0 0 24 24"><path d="M3 8c0-1.1.9-2 2-2h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zM7 10h10"/></svg><span>MySQL / MongoDB</span></li>
+
+        <!-- Python -->
+        <li class="skill">
+            <svg class="skill-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <title>Python</title>
+            <path fill="#3776AB" d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.7l-.05.63-.13.55-.21.46-.26.38-.3.3-.33.22-.35.15-.36.1-.35.04H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.37-.14.39-.1.4-.04.42v3.24H5.8l-.55-.05-.46-.1-.38-.16-.32-.2-.27-.25-.2-.29-.15-.33-.1-.36-.05-.4V6.07l.05-.6.13-.5.2-.46.26-.4.3-.33.33-.27.35-.2.36-.14.36-.1.34-.04h5.7V2.24l-.04-.46-.1-.4-.16-.36-.24-.32-.31-.27-.4-.2-.48-.14-.61-.05H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.37-.14.39-.1.4-.04.42V8.7H5.8l-.55-.05-.46-.1-.38-.16-.32-.2-.27-.25-.2-.29-.15-.33-.1-.36-.05-.4V2.24l.05-.46.13-.4.2-.36.26-.32.3-.27.33-.22.35-.16.36-.1.36-.04h7.44z"/>
+            </svg>
+            <span>Python</span>
+        </li>
+
+        <!-- C / C++ -->
+        <li class="skill">
+            <svg class="skill-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <title>C++</title>
+            <path fill="#00599C" d="M12 0l10.392 6v12L12 24 1.608 18V6L12 0zm0 1.732L2.618 7.2v9.6L12 22.268l9.382-5.468V7.2L12 1.732zM10.92 7.5h2.16v2.1h-2.16V7.5zm0 4.2h2.16v2.1h-2.16v-2.1zM9.84 9.6h2.16v2.1H9.84V9.6zm4.32 0h2.16v2.1h-2.16V9.6z"/>
+            </svg>
+            <span>C / C++</span>
+        </li>
+
+        <!-- Halide (não tem ícone oficial, criei um placeholder roxo) -->
+        <li class="skill">
+            <svg class="skill-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <title>Halide</title>
+            <circle cx="12" cy="12" r="10" fill="#8e44ad"/>
+            <path d="M7 12l3 3 7-7" stroke="#fff" stroke-width="2" fill="none"/>
+            </svg>
+            <span>Halide</span>
+        </li>
+
+        <!-- OpenMP (também sem oficial, uso símbolo de paralelismo em laranja) -->
+        <li class="skill">
+            <svg class="skill-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <title>OpenMP</title>
+            <circle cx="6" cy="12" r="3" fill="#f59e0b"/>
+            <circle cx="18" cy="12" r="3" fill="#f59e0b"/>
+            <path d="M9 12h6" stroke="#f59e0b" stroke-width="2"/>
+            </svg>
+            <span>OpenMP</span>
+        </li>
+
+        <!-- HTML, CSS, JS -->
+        <li class="skill">
+            <svg class="skill-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <title>HTML5</title>
+            <path fill="#E34F26" d="M1.5 0h21l-1.9 21.6-8.6 2.4-8.6-2.4L1.5 0z"/>
+            <path fill="#fff" d="M12 2.7l7.5.2-1.4 16-6.1 1.8-6.1-1.8L4.5 2.9 12 2.7z"/>
+            </svg>
+            <span>HTML, CSS, JS</span>
+        </li>
+
+        <!-- MySQL / MongoDB -->
+        <li class="skill">
+            <svg class="skill-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <title>MySQL</title>
+            <path fill="#4479A1" d="M12 .5a11.5 11.5 0 1 0 0 23 11.5 11.5 0 0 0 0-23zm0 2a9.5 9.5 0 1 1 0 19 9.5 9.5 0 0 1 0-19z"/>
+            <text x="12" y="15" font-size="6" text-anchor="middle" fill="#4479A1" font-family="Arial">DB</text>
+            </svg>
+            <span>MySQL / MongoDB</span>
+        </li>
+
         </ul>
-      </div>
+    </div>
     </section>
+
 
     <!-- CONTATO -->
     <section id="contato" class="section observe" aria-labelledby="contato-title">

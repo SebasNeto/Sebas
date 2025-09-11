@@ -1,12 +1,12 @@
 /* ===========================
    CONFIG – TROCAR AQUI
    =========================== */
-const GA_ID = "G-XXXXXXXXXX";          // ex.: G-ABC123DEF
+const GA_ID = "G-83FEN292RT";          // ex.: G-ABC123DEF
 const CV_URL = "Sebastião_Bicharra_Neto_Curriculo_CV_.pdf"; // link do seu CV
 const FORM_EMAIL = "sebastiaobicharraneto@gmail.com";  // FormSubmit AJAX
 
 // GA se ID válido
-if (GA_ID && GA_ID !== "G-XXXXXXXXXX") {
+if (GA_ID && GA_ID !== "G-83FEN292RT") {
   window.dataLayer = window.dataLayer || [];
   function gtag(){ dataLayer.push(arguments); }
   gtag('js', new Date()); gtag('config', GA_ID);

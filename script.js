@@ -17,7 +17,7 @@ if (GA_ID && GA_ID !== "G-83FEN292RT") {
    =========================== */
 const I18N = {
   pt:{a11y:{skip:"Ir para o conteúdo"},
-    nav:{about:"Sobre",tcc:"TCC",achievements:"Conquistas",projects:"Projetos",certs:"Certificações",events:"Eventos",skills:"Habilidades",contact:"Contato"},
+    nav:{about:"Sobre",tcc:"TCC",graduation:"Graduação",achievements:"Conquistas",projects:"Projetos",certs:"Certificações",events:"Eventos",skills:"Habilidades",contact:"Contato"},
     hero:{title:"Programação Paralela & Visão Computacional",subtitle:"Desenvolvo soluções de alto desempenho aplicadas a Visão Computacional e Programação Paralela.",github:"Ver GitHub ↗",cv:"Baixar CV"},
     about:{title:"Sobre",text:"Graduado em Ciência da Computação pelo Instituto de Computação  ICOMP/UFAM. Atuo com paralelismo aplicado ao processamento de imagens e visão computacional."},
 
@@ -39,6 +39,13 @@ const I18N = {
       btnPdf:"Abrir PDF ↗"
     },
 
+    /* Graduação */
+    grad:{
+      title:"Graduação",
+      photoCaption:"Colação de grau — momento especial da minha trajetória.",
+      videoCaption:"Vídeo curto da cerimônia."
+    },
+
     achievements:{title:"Destaque de conquistas",speedup:"Speedup em paralelismo",projects:"Projetos/estudos entregues",talks:"Apresentações & eventos",areas:"Áreas de foco"},
     projects:{title:"Meus Projetos",search:"Buscar por título ou descrição..."},
     filters:{all:"Todos",parallelism:"Paralelismo",databases:"Banco de Dados",cv:"Visão Computacional",other:"Outros"},
@@ -48,7 +55,7 @@ const I18N = {
       errName:"Nome é obrigatório", errEmail:"E-mail válido é obrigatório", errMsg:"Mensagem é obrigatória"}
   },
   en:{a11y:{skip:"Skip to content"},
-    nav:{about:"About",tcc:"Thesis",achievements:"Highlights",projects:"Projects",certs:"Certificates",events:"Events",skills:"Skills",contact:"Contact"},
+    nav:{about:"About",tcc:"Thesis",graduation:"Graduation",achievements:"Highlights",projects:"Projects",certs:"Certificates",events:"Events",skills:"Skills",contact:"Contact"},
     hero:{title:"Parallel Programming & Computer Vision",subtitle:"I develop high-performance solutions applied to Computer Vision and Parallel Programming.",github:"View GitHub ↗",cv:"Download CV"},
     about:{title:"About",text:"Graduated in Computer Science from the Institute of Computing (ICOMP/UFAM). I work with parallelism applied to image processing and computer vision."},
 
@@ -68,6 +75,13 @@ const I18N = {
       hl3:"Practical guidance on when parallelization pays off, considering memory access patterns and overhead.",
       source:"Summary adapted from the thesis (attached PDF).",
       btnPdf:"Open PDF ↗"
+    },
+
+    /* Graduation */
+    grad:{
+      title:"Graduation",
+      photoCaption:"Commencement — a special milestone in my journey.",
+      videoCaption:"Short clip from the ceremony."
     },
 
     achievements:{title:"Highlights",speedup:"Parallelism speedup",projects:"Delivered projects/studies",talks:"Talks & events",areas:"Focus areas"},
@@ -327,7 +341,7 @@ function iniciarContato(){
     const err = document.getElementById('err-'+id);
     if(msg){
       input.setAttribute('aria-invalid','true');
-      input.setAttribute('aria-describedby','err-'+id);
+      input.setAttribute('aria-describedby','err-'+id); // <-- corrigido aqui
       err.textContent = msg;
       err.setAttribute('role','alert');
     }else{
@@ -398,12 +412,11 @@ function iniciarMenu(){
 function atualizarMetricas() {
   const el = sel => document.querySelector(`.metric[data-metric="${sel}"]`);
 
-  // Defina as regras de contagem aqui:
   const valores = {
-    speedup: 1000,                              // fixo ou calculado
-    projects: projetos.length,               // conta projetos do array
-    talks: eventos.length,                   // conta eventos
-    areas: new Set(projetos.flatMap(p=>p.tags || [])).size // conta áreas únicas
+    speedup: 1000,
+    projects: projetos.length,
+    talks: eventos.length,
+    areas: new Set(projetos.flatMap(p=>p.tags || [])).size
   };
 
   for (const [k,v] of Object.entries(valores)) {
@@ -460,6 +473,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
   iniciarScrollspy(); iniciarReveal(); iniciarBuscaEFiltro(); iniciarCarrosselCertificados();
   iniciarFabTopo(); iniciarTema(); iniciarLightbox(); configurarCV(); iniciarContato(); iniciarMenu(); atualizarMetricas(); iniciarMetricas();
 });
+
 
 
 

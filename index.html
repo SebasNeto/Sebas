@@ -47,6 +47,7 @@
         <ul>
           <li><a href="#sobre" data-nav data-i18n="nav.about">Sobre</a></li>
           <li><a href="#tcc" data-nav data-i18n="nav.tcc">TCC</a></li>
+          <li><a href="#graduacao" data-nav data-i18n="nav.graduation">Graduação</a></li>
           <li><a href="#conquistas" data-nav data-i18n="nav.achievements">Conquistas</a></li>
           <li><a href="#projetos" data-nav data-i18n="nav.projects">Projetos</a></li>
           <li><a href="#certificados" data-nav data-i18n="nav.certs">Certificações</a></li>
@@ -107,7 +108,7 @@
     </section>
 
     <!-- TCC -->
-    <!-- Conteúdo baseado e resumido do TCC. :contentReference[oaicite:0]{index=0} -->
+    <!-- Conteúdo baseado e resumido do TCC. -->
     <section id="tcc" class="section observe" aria-labelledby="tcc-title">
       <div class="container">
         <h2 id="tcc-title" class="section-title" data-i18n="tcc.title">Trabalho de Conclusão de Curso (TCC)</h2>
@@ -158,6 +159,37 @@
       </div>
     </section>
 
+    <!-- GRADUAÇÃO -->
+    <!-- Salve os arquivos: imagens/graduacao.jpg e videos/graduacao.mp4 -->
+    <section id="graduacao" class="section observe" aria-labelledby="grad-title">
+      <div class="container">
+        <h2 id="grad-title" class="section-title" data-i18n="grad.title">Graduação</h2>
+
+        <div class="grad-grid">
+          <figure class="grad-media">
+            <img
+              src="imagens/graduacao.jpg"
+              alt="Foto da colação de grau"
+              loading="lazy" decoding="async"
+              data-lightbox="imagens/graduacao.jpg">
+            <figcaption data-i18n="grad.photoCaption">Colação de grau — momento especial da minha trajetória.</figcaption>
+          </figure>
+
+          <figure class="grad-media">
+            <video
+              class="grad-video"
+              controls
+              playsinline
+              poster="imagens/graduacao.jpg">
+              <source src="imagens/graduacao.mp4" type="video/mp4">
+              Seu navegador não suporta vídeo HTML5.
+            </video>
+            <figcaption data-i18n="grad.videoCaption">Vídeo curto da cerimônia.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <!-- CONQUISTAS -->
     <section id="conquistas" class="section observe" aria-labelledby="conqs-title">
       <div class="container">
@@ -167,7 +199,6 @@
           <!-- SPEEDUP -->
           <article class="metric" data-metric="speedup" data-count="7">
             <div class="metric-icon">
-              <!-- relógio/velocidade -->
               <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path fill-rule="evenodd" d="M12 2.25a9.75 9.75 0 1 0 9.75 9.75A9.76 9.76 0 0 0 12 2.25zm.75 4.5a.75.75 0 0 0-1.5 0v5.19l3.72 2.15a.75.75 0 0 0 .75-1.3L12.75 11V6.75z" clip-rule="evenodd"/>
               </svg>
@@ -179,7 +210,6 @@
           <!-- PROJETOS -->
           <article class="metric" data-metric="projects" data-count="0">
             <div class="metric-icon">
-              <!-- pasta -->
               <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M2.25 6.75A2.25 2.25 0 0 1 4.5 4.5h4.086a2.25 2.25 0 0 1 1.59.659L12 6.982h7.5a2.25 2.25 0 0 1 2.25 2.25v8.25a2.25 2.25 0 0 1-2.25 2.25H4.5a2.25 2.25 0 0 1-2.25-2.25V6.75z"/>
               </svg>
@@ -191,7 +221,6 @@
           <!-- EVENTOS -->
           <article class="metric" data-metric="talks" data-count="0">
             <div class="metric-icon">
-              <!-- calendário -->
               <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M6.75 3a.75.75 0 0 0-1.5 0v.75H3a.75.75 0 0 0-.75.75v15a.75.75 0 0 0 .75.75h18a.75.75 0 0 0 .75-.75v-15a.75.75 0 0 0-.75-.75h-2.25V3a.75.75 0 0 0-1.5 0v.75H6.75V3zM20.25 9H3.75v9.75h16.5V9z"/>
               </svg>
@@ -203,7 +232,6 @@
           <!-- ÁREAS -->
           <article class="metric" data-metric="areas" data-count="0">
             <div class="metric-icon">
-              <!-- camadas -->
               <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M12 2.25a.75.75 0 0 1 .375.1l8.25 4.875a.75.75 0 0 1 0 1.3l-8.25 4.875a.75.75 0 0 1-.75 0L3.375 8.525a.75.75 0 0 1 0-1.3L11.625 2.35A.75.75 0 0 1 12 2.25zm0 8.25a.75.75 0 0 1 .375.1l8.25 4.875a.75.75 0 0 1 0 1.3l-8.25 4.875a.75.75 0 0 1-.75 0L3.375 16.775a.75.75 0 0 1 0-1.3l8.25-4.875a.75.75 0 0 1 .375-.1z"/>
               </svg>
@@ -376,6 +404,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 

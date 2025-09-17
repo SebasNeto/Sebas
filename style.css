@@ -49,7 +49,6 @@ body{
 .icon-btn{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:10px;background:var(--surface-2);border:1px solid var(--border);cursor:pointer;transition:transform .12s,box-shadow .2s}
 .icon-btn:hover{transform:translateY(-1px);box-shadow:var(--shadow);background:color-mix(in oklab,var(--surface-2) 70%,var(--brand) 30%)}
 .icon{width:20px;height:20px;fill:currentColor;color:var(--text)}
-/* chip de idioma com mais contraste no dark */
 .lang-chip{border:1px solid color-mix(in oklab,var(--brand) 35%, var(--border));background:color-mix(in oklab,var(--surface-2) 70%, var(--brand) 30%);color:var(--text);padding:.45rem .7rem;border-radius:999px;cursor:pointer}
 [data-theme="dark"] .lang-chip{background:color-mix(in oklab,var(--surface-2) 45%, var(--brand) 55%);color:#0a0a0a;font-weight:800}
 
@@ -181,29 +180,38 @@ input[aria-invalid="true"], textarea[aria-invalid="true"]{border-color:#b91c1c}
 .tcc-text p{color:var(--muted);margin:.4rem 0; text-align: justify;}
 .tcc-list{margin:.4rem 0 .2rem 1rem}
 .tcc-actions{margin-top:1rem}
-
-.tcc-text ul {
-  text-align: justify;    
-  padding-left: 1.2rem;    
-  margin-top: .5rem;
-}
-
-.tcc-text li {
-  margin-bottom: .4rem;
-  text-align: justify;    
-}
+.tcc-text ul {text-align: justify; padding-left: 1.2rem; margin-top: .5rem;}
+.tcc-text li {margin-bottom: .4rem; text-align: justify;}
 
 @media (max-width:900px){
   .hero-grid{grid-template-columns:1fr}.hero-media{order:-1}
   .tcc-grid{grid-template-columns:1fr;gap:.8rem}
 }
 @media (max-width:600px){
-  .card h3 {
-    text-align:center;
-  }
+  .card h3 { text-align:center; }
 }
 
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+/* ====== GRADUAÇÃO Section ====== */
+.grad-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1rem;
+  align-items:start;
+}
+.grad-media{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+}
+.grad-media img{width:100%;height:auto;display:block;cursor:zoom-in}
+.grad-media figcaption{padding:.5rem .75rem;color:var(--muted);font-size:.9rem}
+.grad-video{width:100%;height:auto;display:block;background:#000}
+
+@media (max-width:900px){
+  .grad-grid{grid-template-columns:1fr}
+}
+
 
 
 

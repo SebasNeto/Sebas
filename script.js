@@ -46,6 +46,13 @@ const I18N = {
       videoCaption:"Vídeo curto da cerimônia."
     },
 
+    degreeCert:{
+      title:"Certificado de Conclusão de Curso",
+      text:"Bacharel em Ciência da Computação (UFAM). Abaixo, o certificado oficial.",
+      open:"Abrir certificado ↗",
+      caption:"Visualizar imagem do certificado"
+    },
+
     achievements:{title:"Destaque de conquistas",speedup:"Speedup em paralelismo",projects:"Projetos/estudos entregues",talks:"Apresentações & eventos",areas:"Áreas de foco"},
     projects:{title:"Meus Projetos",search:"Buscar por título ou descrição..."},
     filters:{all:"Todos",parallelism:"Paralelismo",databases:"Banco de Dados",cv:"Visão Computacional",other:"Outros"},
@@ -82,6 +89,13 @@ const I18N = {
       title:"Graduation",
       photoCaption:"Commencement — a special milestone in my journey.",
       videoCaption:"Short clip from the ceremony."
+    },
+
+    degreeCert:{
+      title:"Degree Completion Certificate",
+      text:"B.Sc. in Computer Science (UFAM). Below is the official certificate.",
+      open:"Open certificate ↗",
+      caption:"View certificate image"
     },
 
     achievements:{title:"Highlights",speedup:"Parallelism speedup",projects:"Delivered projects/studies",talks:"Talks & events",areas:"Focus areas"},

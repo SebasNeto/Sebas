@@ -212,6 +212,29 @@ input[aria-invalid="true"], textarea[aria-invalid="true"]{border-color:#b91c1c}
   .grad-grid{grid-template-columns:1fr}
 }
 
+/* Certificado hero (2 colunas) */
+#certificado .cert-hero{
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  gap:1rem;
+  align-items:start;
+}
+#certificado .cert-copy .tcc-actions{ margin: .6rem 0 0; }
+#certificado .cert-fig{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+#certificado .cert-fig img{
+  width:100%; height:auto; display:block;
+}
+
+@media (max-width:900px){
+  #certificado .cert-hero{ grid-template-columns:1fr; }
+}
+
 
 
 
